@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Handbook</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+   
+  <!-- Main CSS File -->
+  <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+  <header id="header" class="header d-flex flex-column" style="background-color: #f0f0f0">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Official_USF_Bulls_Athletic_Logo.png" alt="">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Handbook</h1>
+    </a>
+    
+    <div class="social-links text-center">
+      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="instagram"><i class="bi bi-envelope"></i></a>
+      <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active" style="color: black;font-size: 15px;"><b><i class="bi bi-patch-question-fill"></i>&nbsp;&nbsp;&nbsp;What to do if</b></a></li>
+        <select id="wtd" style="font-size: 16px; color: #333; background-color: white; border: 1px solid #ccc; border-radius: 4px; padding: 8px 12px; width: 230px; cursor: pointer; transition: border-color 0.3s ease;">
+            <option value="blank" style="color: #888;">Select option</option>
+            <option value="phishing">Phishing Attack</option>
+            <option value="ransomware">Ransomware Attack</option>
+            <option value="apts">Advanced Persistent Threats</option>
+            <option value="sql-injection">SQL Injection</option>
+            <option value="malware">Malware Infections</option>
+            <option value="social-engineering">Social Engineering</option>
+            <option value="data-breach">Data Breaches</option>
+        </select>
+        <br>
+        <li><a href="#hero" class="active" style="color: black;font-size: 15px;"><b><i class="bi bi-person-circle"></i>&nbsp;&nbsp;&nbsp;Your Role</b></a></li>
+        <select id="role" style="font-size: 16px; color: #333; background-color: white; border: 1px solid #ccc; border-radius: 4px; padding: 8px 12px; width: 230px; cursor: pointer; transition: border-color 0.3s ease;">
+            <option value="blank" style="color: #888;">Select a role</option>
+            <option value="executive">Executive</option>
+            <option value="manager">Manager</option>
+            <option value="employee">Employee</option>
+        </select>
+        <br>
+        <button onclick="redirectToPage()" style="color: white; background-color: #006747; padding: 5px 10px; border: 1px solid #005432; border-radius: 5px; margin-top: 10px;">Search</button>
+      </ul>
+    </nav>
+
+    <div style="position: absolute; bottom: 0; padding-bottom: 20px;">
+      <h5><b>Topical Search</b></h5>
+         <ul style="list-style-type: none;padding: 5px;">
+      <li><a onclick="topicalSearch('emailauth')" href="#" id="mfa"><i class="bi bi-envelope-arrow-up"></i>&nbsp;&nbsp;Email Authentication</a></li>
+      <li><a onclick="topicalSearch('cloudsec')" href="#" id="mfa"><i class="bi bi-cloud-arrow-down-fill"></i>&nbsp;&nbsp;Cloud Security Best Practices</a></li>
+      <li><a onclick="topicalSearch('networksec')" href="#" id="mfa"><i class="bi bi-reception-4"></i>&nbsp;&nbsp;Network Security Protocols</a></li>
+      <li><a onclick="topicalSearch('mobiledevicesecurity')" href="#" id="mds"><i class="bi bi-phone"></i>&nbsp;&nbsp;Mobile Device Security</a></li>
+      <li><a onclick="topicalSearch('securebrowsing')" href="#" id="sbp"><i class="bi bi-browser-chrome"></i>&nbsp;&nbsp;Secure Browsing Practices</a></li>
+      <li><a onclick="topicalSearch('socialengineering')" href="#" id="set"><i class="bi bi-signal"></i>&nbsp;&nbsp;Social Engineering Threats</a></li>
+      <li><a onclick="topicalSearch('mfa')" href="#" id="mfa"><i class="bi bi-fingerprint"></i>&nbsp;&nbsp;Multi-Factor Authentication</a></li>
+      
+    </ul>
+    </div>
+  </header>
+
+  <div style="background-color:#005432; margin: 0; padding: 10px; width: 100%; position: fixed; z-index: 1000;">
+    <h3 style="text-align: center; color:white"><b>Cyber Florida: The Florida Center for Cybersecurity</b></h3>
+  </div>
+
+  <main class="">
+    <section id="hero" class="portfolio section" style="padding: 0;">
+      <div class="container section-title" style="margin: 0; padding: 30px;"></div>
+
+      <div class="container section-title" style="margin: 0; padding: 5px;">
+        <ul class="portfolio-filters isotope-filters">
+          <li onclick="callHome()" data-filter="*" class="filter-active" style="padding: 12px; border-bottom:5px solid white;"><b>Home</b></li>
+          <li data-filter=".filter-app" style="padding: 12px; border-bottom:5px solid white;"><b>Settings</b></li>
+          <li onclick="topicalSearch('flstat')" data-filter=".filter-product" style="padding: 12px; border-bottom:5px solid #006747;;"><b>FL Cybersecurity Laws</b></li>
+          <li onclick="location.href='#contact';" data-filter=".filter-branding" style="padding: 12px; border-bottom:5px solid white;"><b>Contact Us</b></li>
+        </ul>
+        <hr>
+      </div>
+
+      <br>
+      <div class="container section-title">
+        <h2>Florida Cybersecurity Statutes and Laws</h2>
+        <p>The state of Florida has implemented several statutes and laws to enhance cybersecurity and protect sensitive information. Some key statutes include:</p>
+        <hr>
+        
+
+        <h3>F.S. 282.3185 - Local Government Cybersecurity Act</h3>
+                    <p>The Local Government Cybersecurity Act mandates cybersecurity standards and reporting requirements for local governments in Florida. It emphasizes the need for local governments to adopt cybersecurity best practices, conduct regular risk assessments, and report cybersecurity incidents to the appropriate state authorities.</p>
+                    <ul>
+                        <li>Requires local governments to establish and implement cybersecurity programs.</li>
+                        <li>Mandates regular cybersecurity training for employees.</li>
+                        <li>Requires reporting of cybersecurity incidents to the Florida Digital Service.</li>
+                    </ul>
+                    <p><a href="https://www.flsenate.gov/Laws/Statutes/2024/282.3185" target="_blank">Local Government Cybersecurity Act (F.S. 282.3185)</a></p>
+<hr>
+                    <h3>F.S. 501.171 - Florida Information Protection Act (FIPA)</h3>
+                    <p>The Florida Information Protection Act requires businesses and government entities to protect personal information and notify individuals of data breaches. It outlines specific measures for safeguarding data and sets timelines for breach notifications.</p>
+                    <ul>
+                        <li>Requires reasonable measures to protect personal information.</li>
+                        <li>Mandates breach notification to affected individuals within 30 days.</li>
+                        <li>Imposes penalties for non-compliance.</li>
+                    </ul>
+                    <p><a href="https://www.flsenate.gov/Laws/Statutes/2024/501.171" target="_blank">Florida Information Protection Act (FIPA) (F.S. 501.171)</a></p>
+                    <hr>
+                    <h3>F.S. 668.50 - Uniform Electronic Transaction Act</h3>
+                    <p>The Uniform Electronic Transaction Act provides a legal framework for secure electronic transactions and signatures in Florida. It ensures that electronic records and signatures are as legally binding as their paper counterparts.</p>
+                    <ul>
+                        <li>Recognizes electronic signatures and records as legally valid.</li>
+                        <li>Facilitates electronic transactions between parties.</li>
+                        <li>Ensures the security and integrity of electronic records.</li>
+                    </ul>
+                    <p><a href="https://www.flsenate.gov/Laws/Statutes/2024/668.50" target="_blank">Uniform Electronic Transaction Act (F.S. 668.50)</a></p>
+                    <hr>
+                    <h3>F.S. 282.0041 - State Technology Office and Cybersecurity Responsibilities</h3>
+                    <p>This statute defines the responsibilities of the State Technology Office regarding cybersecurity. It outlines the office's duties in developing and implementing cybersecurity policies, procedures, and standards for state agencies.</p>
+                    <ul>
+                        <li>Establishes the State Technology Office's role in cybersecurity.</li>
+                        <li>Mandates the development of cybersecurity policies and procedures.</li>
+                        <li>Requires state agencies to comply with cybersecurity standards.</li>
+                    </ul>
+                    <p><a href="https://www.flsenate.gov/Laws/Statutes/2024/282.0041" target="_blank">State Technology Office and Cybersecurity Responsibilities (F.S. 282.0041)</a></p>
+<hr>
+                    <h3>F.S. 282.318 - Enterprise Security of Data and Information Technology</h3>
+                    <p>This statute requires state agencies to establish and maintain an enterprise cybersecurity program. It emphasizes the importance of protecting state data and information technology resources from unauthorized access and other cyber threats.</p>
+                    <ul>
+                        <li>Mandates enterprise cybersecurity programs for state agencies.</li>
+                        <li>Requires regular security assessments and audits.</li>
+                        <li>Establishes incident response protocols.</li>
+                    </ul>
+                    <p><a href="https://www.flsenate.gov/Laws/Statutes/2024/282.318" target="_blank">Enterprise Security of Data and Information Technology (F.S. 282.318)</a></p>
+<hr>
+                    <h3>F.S. 282.319 - Florida Cybersecurity Governance Act</h3>
+                    <p>This statute establishes the governance framework for cybersecurity in Florida. It outlines the roles and responsibilities of various state entities in maintaining and improving the state's cybersecurity posture.</p>
+                    <ul>
+                        <li>Establishes the Florida Cybersecurity Advisory Council.</li>
+                        <li>Mandates the development of a statewide cybersecurity strategy.</li>
+                        <li>Requires state agencies to report cybersecurity incidents.</li>
+                    </ul>
+                    <p><a href="https://www.flsenate.gov/Laws/Statutes/2024/282.319" target="_blank">Florida Cybersecurity Governance Act (F.S. 282.319)</a></p>
+<hr>
+                    <h3>F.S. 1004.444 - Florida Center for Cybersecurity</h3>
+                    <p>This statute establishes the Florida Center for Cybersecurity at the University of South Florida. The center aims to enhance cybersecurity education, research, and outreach across the state.</p>
+                    <ul>
+                        <li>Promotes cybersecurity education and workforce development.</li>
+                        <li>Facilitates research and innovation in cybersecurity.</li>
+                        <li>Engages in public outreach to raise cybersecurity awareness.</li>
+                    </ul>
+                    <p><a href="https://www.flsenate.gov/Laws/Statutes/2024/1004.444" target="_blank">Florida Center for Cybersecurity (F.S. 1004.444)</a></p>
+
+        <br>
+        
+
+        
+
+        
+      </div>
+    </section>
+
+    <br>
+  </main>
+
+  <header id="header" class="header d-flex flex-column" style="right: 0; border-left: 1px solid lightgrey; background-color: #f0f0f0">
+    <div style="position: absolute; top: 0; padding-top: 10px;"> 
+      <h5><b>Subscribe:</b></h5>
+      <p>Subscribe to our Newsletters</p>
+      <input style="font-size: 16px; color: #333; background-color: white; border: 1px solid #ccc; border-radius: 4px; padding: 8px 12px; width: 230px;" type="text" placeholder="Your Email ID here..">
+      <button onclick="signupClick()" style="color: white; background-color: #006747; padding: 5px 10px; border: 1px solid #005432; border-radius: 5px; margin-top: 10px;">Sign Up</button>
+      <p style="color: #006747; display: none;" id="signup"><b>Awesome! You are signed up to receive our Monthly Newsletters.</b></p>
+      <hr>
+      
+      <h5><b>Our Courses:</b></h5>
+      <ul style="list-style-type: none; padding: 5px;">
+        <li><a href="https://learn.usf-cyber-awareness.org/#/signup" id="mds" target="_blank"><i class="bi bi-bookmark"></i>&nbsp;&nbsp;Awareness Course</a></li>
+        <li><a href="#" id="sbp" target="_blank"><i class="bi bi-bookmark"></i>&nbsp;&nbsp;Executive Course</a></li>
+        <li><a href="#" id="sbp" target="_blank"><i class="bi bi-bookmark"></i>&nbsp;&nbsp;Managerial Course</a></li>
+      </ul>
+    </div>
+
+    <div style="position: absolute; bottom: 0; padding-bottom: 20px;"> 
+      <h5><b>News Headlines:</b></h5>
+      
+      <div style="display: flex; width: 250px; background-color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 10px; border-radius: 10px; overflow: hidden;">
+        <div style="flex: 0 0 30%; overflow: hidden;">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjsEAueQ83P-n8Tb9-uc6BdnNm1XMf_BNle-Wwl-btR74oHrOPZ7m-WmhcLE3kuBPtsZyBIlNwk6xYyDdu5ZQXuM4PEAB7s9APUiqSqHByjestjSPfM4VtiNp-agkgVCLMmp7nffQTPNS00KtRsAIVtRrWovaKq97IwiwMZ7tj6RqSQ7Smr2O6nrVXJghNq/s728-rw-e365/gps.png" alt="News Image" style="height: 70px; width: 70px; object-fit: cover;">
+        </div>
+        <div style="flex: 1; padding: 8px; display: flex; align-items: center;">
+          <a target="_blank" href="https://thehackernews.com/2024/08/critical-flaws-in-traccar-gps-system.html" style="text-decoration: none; color: black; line-height: 1.2; font-size: 15px;">Critical Flaws in Traccar GPS System..<br><span style="color: #888; font-size: 12px;">The Hacker News</span></a>
+        </div>
+      </div>
+
+      <div style="display: flex; width: 250px; background-color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 10px; border-radius: 10px; overflow: hidden;">
+        <div style="flex: 0 0 30%; overflow: hidden;">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi61Uo-gbrcodFC3GT5VI8PxjHqQJa9w-jP8ENUaHxlPVHhbMxx60jCxLlKzS5vBuMUgFbcCNCMdcoyLGzPgBgtyxDxe4pSB2jv7_-puKT538Ffv5rTaUFZac0lU3Sf0uf8fxhQMVEdEY02SSmv6ehhww4l5ydnUb0UEBlYsGSExZrTPYdDEGwsCPMNXaFW/s728-rw-e365/linux.png" alt="News Image" style="height: 70px; width: 70px; object-fit: cover;">
+        </div>
+        <div style="flex: 1; padding: 8px; display: flex; align-items: center;">
+          <a target="_blank" href="https://thehackernews.com/2024/08/critical-flaws-in-traccar-gps-system.html" style="text-decoration: none; color: black; line-height: 1.2; font-size: 15px;">New Linux Malware 'sedexp' Hides..<br><span style="color: #888; font-size: 12px;">The Hacker News</span></a>
+        </div>
+      </div>
+
+      <div style="display: flex; width: 250px; background-color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 0px; border-radius: 10px; overflow: hidden;">
+        <div style="flex: 0 0 30%; overflow: hidden;">
+          <img target="_blank" src="https://cyberscoop.com/wp-content/uploads/sites/3/2017/05/GettyImages-674756398.jpg" alt="News Image" style="height: 70px; width: 70px; object-fit: cover;">
+        </div>
+        <div style="flex: 1; padding: 8px; display: flex; align-items: center;">
+          <a href="https://thehackernews.com/2024/08/critical-flaws-in-traccar-gps-system.html" style="text-decoration: none; color: black; line-height: 1.2; font-size: 15px;">SonicWall pushes patch for critical..<br><span style="color: #888; font-size: 12px;">CyberScoop</span></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/typed.js/typed.umd.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/purecounter/purecounter_vanilla.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/waypoints/noframework.waypoints.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+
+  <!-- Main JS File -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <script>
+    function signupClick() {
+      document.getElementById('signup').style.display = 'block';
+    }
+
+    function callHome() {
+      window.location.href = "/content";
+    }
+
+    function redirectToPage() {
+    // Get the selected values from the dropdowns
+    var role = document.getElementById("role").value;
+    var wtd = document.getElementById("wtd").value;
+    
+    // Check if the user selected 'blank'
+    if (wtd == 'blank') {
+        alert("Please Select the Topic 'What to do If'");
+    } else {
+        // Construct the URL
+        var newUrl = "/" + role + "_" + wtd;
+        
+        // Redirect to the new URL
+        window.location.href = newUrl;
+    }
+}
+  </script>
+
+</body>
+
+</html>

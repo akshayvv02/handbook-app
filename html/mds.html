@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Fetch Example</title>
+</head>
+<body>
+    <h1>Fetch Cybersecurity News</h1>
+    <button onclick="fetchNews()">Get News</button>
+    <pre id="newsOutput"></pre>
+
+    <script>
+        function fetchNews() {
+            const url = 'http://api.mediastack.com/v1/news?access_key=186e9ab51e73f859dc7a8155f619a72a&keywords=cybersecurity&countries=us&limit=100';
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('newsOutput').textContent = JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    console.error('Error fetching the news:', error);
+                });
+        }
+    </script>
+</body>
+</html>

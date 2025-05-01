@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Handbook</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+ 
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+   <!-- Vendor CSS Files -->
+   <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+   <link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+   <link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+   <link href="{{ url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+   <link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+   
+   <!-- Main CSS File -->
+   <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+
+ 
+</head>
+
+<body class="index-page">
+  <header id="header" class="header d-flex flex-column" style="background-color: #f0f0f0">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Official_USF_Bulls_Athletic_Logo.png" alt="">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <h1 class="sitename">Handbook</h1>
+      
+    </a>
+   
+    
+    <div class="social-links text-center">
+      
+      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="instagram"><i class="bi bi-envelope"></i></a>
+      <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active" style="color: black;font-size: 15px;"><b><i class="bi bi-patch-question-fill"></i>&nbsp;&nbsp;&nbsp;What to do if</b></a></li>
+        <select id="wtd" style="
+        
+            font-size: 16px; /* Font size */
+            color: #333; /* Text color */
+            background-color: white; /* Background color */
+            border: 1px solid #ccc; /* Border style */
+            border-radius: 4px; /* Rounded corners */
+            padding: 8px 12px; /* Padding inside the select box */
+            width: 230px; /* Width of the select box */
+            cursor: pointer; /* Cursor style when hovering */
+            transition: border-color 0.3s ease; /* Smooth border color transition */
+        ">
+                <option value="blank" style="color: #888;">Select option</option>
+                <option value="phishing">Phishing Attack</option>
+                <option value="ransomware">Ransomware Attack</option>
+                <option value="apts">Advanced Persistent Threats</option>
+                <!-- <option value="dos">DoS/DDoS Attack</option> -->
+                <!-- <option value="insider">Insider Threat</option> -->
+                <option value="sql-injection">SQL Injection</option>
+                <option value="malware">Malware Infections</option>
+                <option value="social-engineering" selected>Social Engineering</option>
+                <!-- <option value="zero-day">Zero-Day Exploits</option> -->
+                <option value="data-breach">Data Breaches</option>
+            </select>
+        <br>
+        <li><a href="#hero" class="active" style="color: black;font-size: 15px;"><b><i class="bi bi-person-circle"></i>&nbsp;&nbsp;&nbsp;Your Role</b></a></li>
+        
+        <select id="role" style="
+        
+            font-size: 16px; /* Font size */
+            color: #333; /* Text color */
+            background-color: white; /* Background color */
+            border: 1px solid #ccc; /* Border style */
+            border-radius: 4px; /* Rounded corners */
+            padding: 8px 12px; /* Padding inside the select box */
+            width: 230px; /* Width of the select box */
+            cursor: pointer; /* Cursor style when hovering */
+            transition: border-color 0.3s ease; /* Smooth border color transition */
+        ">
+                <option value="blank" style="color: #888;">Select a role</option>
+                <option value="executive">Executive</option>
+                <option value="manager" selected>Manager</option>
+                <option value="employee">Employee</option>
+            </select>
+            <br>
+            <button onclick="redirectToPage()" style="color: white; background-color: #006747;padding-right: 10px;padding-left: 10px;padding-top: 5px;padding-bottom: 5px;border: 1px solid #005432;border-radius: 5px;margin-top: 10px;margin-bottom: 10px;">Search</button>
+
+      </ul>
+    </nav>
+    <div style="position: absolute; bottom: 0;padding-bottom: 20px;">
+    <h5><b>Topical Search</b></h5>
+       <ul style="list-style-type: none;padding: 5px;">
+      <li><a onclick="topicalSearch('emailauth')" href="#" id="mfa"><i class="bi bi-envelope-arrow-up"></i>&nbsp;&nbsp;Email Authentication</a></li>
+      <li><a onclick="topicalSearch('cloudsec')" href="#" id="mfa"><i class="bi bi-cloud-arrow-down-fill"></i>&nbsp;&nbsp;Cloud Security Best Practices</a></li>
+      <li><a onclick="topicalSearch('networksec')" href="#" id="mfa"><i class="bi bi-reception-4"></i>&nbsp;&nbsp;Network Security Protocols</a></li>
+      <li><a onclick="topicalSearch('mobiledevicesecurity')" href="#" id="mds"><i class="bi bi-phone"></i>&nbsp;&nbsp;Mobile Device Security</a></li>
+      <li><a onclick="topicalSearch('securebrowsing')" href="#" id="sbp"><i class="bi bi-browser-chrome"></i>&nbsp;&nbsp;Secure Browsing Practices</a></li>
+      <li><a onclick="topicalSearch('socialengineering')" href="#" id="set"><i class="bi bi-signal"></i>&nbsp;&nbsp;Social Engineering Threats</a></li>
+      <li><a onclick="topicalSearch('mfa')" href="#" id="mfa"><i class="bi bi-fingerprint"></i>&nbsp;&nbsp;Multi-Factor Authentication</a></li>
+      
+    </ul>
+    </div>
+  </header>
+  <div class="" style="background-color:#005432;margin: 0;padding: 10px;width: 100%;position: fixed;z-index: 1000; ">
+    <h3 style="text-align: center;color:white"><b>Cyber Florida: The Florida Center for Cybersecurity</b></h3><!-- End Portfolio Filters -->
+  </div>
+
+  <main class="">
+
+    <section id="hero" class="portfolio section" style="padding: 0;">
+
+      <div class="container section-title" style="margin: 0;padding: 30px;">
+        
+      </div>
+      <!-- Section Title -->
+      <div class="container section-title" style="margin: 0;padding: 5px;">
+        <ul class="portfolio-filters isotope-filters">
+          <li onclick="callHome()" data-filter="*" class="filter-active" style="padding: 12px;border-bottom:5px solid #006747;"><b>Home</b></li>
+          <li data-filter=".filter-app" style="padding: 12px;border-bottom:5px solid white;"><b>Settings</b></li>
+          <li onclick="topicalSearch('flstat')" data-filter=".filter-product" style="padding: 12px;border-bottom:5px solid white;"><b>FL Cybersecurity Laws</b></li>
+          <li onclick="location.href='#contact';" data-filter=".filter-branding" style="padding: 12px;border-bottom:5px solid white;"><b>Contact Us</b></li>
+        
+        </ul><!-- End Portfolio Filters -->
+        <hr>
+      </div>
+      <br>
+      <div class="container section-title">
+        <h2>People Managers: Social Engineering Attack Response</h2>
+      
+        <section id="resume" class="resume section">
+          <!-- Section Title -->
+          <div class="container section-title">
+            <p>In the event of a successful social engineering attack, people managers should take the following steps to manage the situation effectively:</p>
+          </div>
+      
+          <section id="resume" class="resume section">
+            <!-- Section Title -->
+            <br>
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12">
+      
+                  <div class="resume-item">
+                    <div class="row">
+                      <div class="col-lg-1">
+                        <h1 style="font-size: 3em;"><i class="bi bi-info-circle"></i></h1>
+                      </div>
+                      <div class="col-lg-11" style="padding-left: 0px;">
+                        <h4 style="color: black; text-transform: capitalize;">Report to IT and Upper Management</h4>
+                        <p>Immediately inform the IT department and your direct superior about the incident.</p>
+                      </div>
+                    </div>
+                    <br>
+                  </div><!-- End Resume Item -->
+      
+                  <div class="resume-item">
+                    <div class="row">
+                      <div class="col-lg-1">
+                        <h1 style="font-size: 3em;"><i class="bi bi-shield-exclamation"></i></h1>
+                      </div>
+                      <div class="col-lg-11" style="padding-left: 0px;">
+                        <h4 style="color: black; text-transform: capitalize;">Contain the Threat</h4>
+                        <p>Work with the IT department to isolate affected systems and prevent further spread.</p>
+                      </div>
+                    </div>
+                    <br>
+                  </div><!-- End Resume Item -->
+      
+                  <div class="resume-item">
+                    <div class="row">
+                      <div class="col-lg-1">
+                        <h1 style="font-size: 3em;"><i class="bi bi-person-check"></i></h1>
+                      </div>
+                      <div class="col-lg-11" style="padding-left: 0px;">
+                        <h4 style="color: black; text-transform: capitalize;">Identify and Assist Affected Team Members</h4>
+                        <p>Determine which team members were affected and provide them with specific instructions to secure their systems.</p>
+                      </div>
+                    </div>
+                    <br>
+                  </div><!-- End Resume Item -->
+      
+                  <div class="resume-item">
+                    <div class="row">
+                      <div class="col-lg-1">
+                        <h1 style="font-size: 3em;"><i class="bi bi-megaphone"></i></h1>
+                      </div>
+                      <div class="col-lg-11" style="padding-left: 0px;">
+                        <h4 style="color: black; text-transform: capitalize;">Communicate with Your Team</h4>
+                        <p>Clearly communicate the situation to your team and provide guidance on next steps.</p>
+                      </div>
+                    </div>
+                    <br>
+                  </div><!-- End Resume Item -->
+      
+                  <div class="resume-item">
+                    <div class="row">
+                      <div class="col-lg-1">
+                        <h1 style="font-size: 3em;"><i class="bi bi-search"></i></h1>
+                      </div>
+                      <div class="col-lg-11" style="padding-left: 0px;">
+                        <h4 style="color: black; text-transform: capitalize;">Facilitate Forensic Analysis</h4>
+                        <p>Assist the IT and security teams with collecting information and evidence for forensic analysis.</p>
+                      </div>
+                    </div>
+                    <br>
+                  </div><!-- End Resume Item -->
+      
+                  <div class="resume-item">
+                    <div class="row">
+                      <div class="col-lg-1">
+                        <h1 style="font-size: 3em;"><i class="bi bi-shield-shaded"></i></h1>
+                      </div>
+                      <div class="col-lg-11" style="padding-left: 0px;">
+                        <h4 style="color: black; text-transform: capitalize;">Reinforce Security Protocols</h4>
+                        <p>Conduct an immediate refresher training session to reinforce cybersecurity best practices and prevent future incidents.</p>
+                      </div>
+                    </div>
+                    <br>
+                  </div><!-- End Resume Item -->
+      
+                  <div class="resume-item">
+                    <div class="row">
+                      <div class="col-lg-1">
+                        <h1 style="font-size: 3em;"><i class="bi bi-eye"></i></h1>
+                      </div>
+                      <div class="col-lg-11" style="padding-left: 0px;">
+                        <h4 style="color: black; text-transform: capitalize;">Monitor for Further Threats</h4>
+                        <p>Keep an eye on team activities and communications for signs of additional threats or suspicious behavior.</p>
+                      </div>
+                    </div>
+                    <br>
+                  </div><!-- End Resume Item -->
+      
+                </div>
+              </div>
+            </div>
+          </section><!-- /Resume Section -->
+      
+        </div>
+      
+      </section><!-- /Portfolio Section -->
+      
+      
+        
+    
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+     
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-12">
+          </div>
+
+          
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+  <header id="header" class="header d-flex flex-column" style="right: 0;border-left: 1px solid lightgrey; background-color: #f0f0f0">
+
+    <div style="position: absolute; top: 0;padding-top: 10px;"> 
+      <h5><b>Subscribe:</b></h5>
+      <p>Subscribe to our News Letters</p>
+      <input style="
+        
+      font-size: 16px; /* Font size */
+      color: #333; /* Text color */
+      background-color: white; /* Background color */
+      border: 1px solid #ccc; /* Border style */
+      border-radius: 4px; /* Rounded corners */
+      padding: 8px 12px; /* Padding inside the select box */
+      width: 230px; /* Width of the select box */; "
+      type="text" placeholder="Your Email ID here.." />
+      <button onclick="signupClick()" style="color: white; background-color: #006747;padding-right: 10px;padding-left: 10px;padding-top: 5px;padding-bottom: 5px;border: 1px solid #005432;border-radius: 5px;margin-top: 10px;margin-bottom: 10px;">Sign Up</button>
+      <p style="color: #006747;display: none;" id="signup"><b>Awesome! You are signed up to receive our Monthly Newsletters.</b></p>
+      <hr>
+      
+      <h5><b>Our Courses:</b></h5>
+      <ul style="list-style-type: none;padding: 5px;">
+        <li><a href="https://learn.usf-cyber-awareness.org/#/signup" id="mds" target="_blank"><i class="bi bi-bookmark"></i>&nbsp;&nbsp;Awareness Course</a></li>
+        <li><a href="#" id="sbp" target="_blank"><i class="bi bi-bookmark"></i>&nbsp;&nbsp;Executive Course</a></li>
+        <li><a href="#" id="sbp" target="_blank"><i class="bi bi-bookmark"></i>&nbsp;&nbsp;Managerial Course</a></li>
+        
+        
+      </ul>
+      <p></p>
+    </div>
+
+    <div style="position: absolute; bottom: 0;padding-bottom: 20px;"> 
+      <h5><b>News Headlines:</b></h5>
+      
+      <div style="display: flex; width: 250px; background-color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 10px; border-radius: 10px; overflow: hidden;">
+        <div style="flex: 0 0 30%; overflow: hidden;">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjsEAueQ83P-n8Tb9-uc6BdnNm1XMf_BNle-Wwl-btR74oHrOPZ7m-WmhcLE3kuBPtsZyBIlNwk6xYyDdu5ZQXuM4PEAB7s9APUiqSqHByjestjSPfM4VtiNp-agkgVCLMmp7nffQTPNS00KtRsAIVtRrWovaKq97IwiwMZ7tj6RqSQ7Smr2O6nrVXJghNq/s728-rw-e365/gps.png" alt="News Image" style="height: 70px; width: 70px; object-fit: cover;">
+        </div>
+        <div style="flex: 1; padding: 8px; display: flex; align-items: center;">
+            <a target="_blank" href="https://thehackernews.com/2024/08/critical-flaws-in-traccar-gps-system.html" style="text-decoration: none; color: black; line-height: 1.2;font-size: 15px;">Critical Flaws in Traccar GPS System..<br><span style="color: #888;font-size: 12px;">The Hacker News</span></a>
+            
+        </div>
+    </div>
+    
+    <div style="display: flex; width: 250px; background-color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 10px; border-radius: 10px; overflow: hidden;">
+      <div style="flex: 0 0 30%; overflow: hidden;">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi61Uo-gbrcodFC3GT5VI8PxjHqQJa9w-jP8ENUaHxlPVHhbMxx60jCxLlKzS5vBuMUgFbcCNCMdcoyLGzPgBgtyxDxe4pSB2jv7_-puKT538Ffv5rTaUFZac0lU3Sf0uf8fxhQMVEdEY02SSmv6ehhww4l5ydnUb0UEBlYsGSExZrTPYdDEGwsCPMNXaFW/s728-rw-e365/linux.png" alt="News Image" style="height: 70px; width: 70px; object-fit: cover;">
+      </div>
+      <div style="flex: 1; padding: 8px; display: flex; align-items: center;">
+          <a target="_blank" href="https://thehackernews.com/2024/08/critical-flaws-in-traccar-gps-system.html" style="text-decoration: none; color: black; line-height: 1.2;font-size: 15px;">New Linux Malware 'sedexp' Hides..<br><span style="color: #888;font-size: 12px;">The Hacker News</span></a>
+          
+      </div>
+  </div>
+  <div style="display: flex; width: 250px; background-color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 0px; border-radius: 10px; overflow: hidden;">
+    <div style="flex: 0 0 30%; overflow: hidden;">
+        <img target="_blank" src="https://cyberscoop.com/wp-content/uploads/sites/3/2017/05/GettyImages-674756398.jpg" alt="News Image" style="height: 70px; width: 70px; object-fit: cover;">
+    </div>
+    <div style="flex: 1; padding: 8px; display: flex; align-items: center;">
+        <a href="https://thehackernews.com/2024/08/critical-flaws-in-traccar-gps-system.html" style="text-decoration: none; color: black; line-height: 1.2;font-size: 15px;">SonicWall pushes patch for critical..<br><span style="color: #888;font-size: 12px;">CyberScoop</span></a>
+        
+    </div>
+</div>
+
+      
+    </div>
+    
+
+  </header>
+
+  
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/php-email-form/validate.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/typed.js/typed.umd.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/purecounter/purecounter_vanilla.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/waypoints/noframework.waypoints.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+
+<!-- Main JS File -->
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <script>
+    function signupClick(){
+      document.getElementById('signup').style.display = 'block';
+    }
+
+    function callHome(){
+      window.location.href = "/content";
+    }
+
+    function redirectToPage() {
+    // Get the selected values from the dropdowns
+    var role = document.getElementById("role").value;
+    var wtd = document.getElementById("wtd").value;
+    
+    // Check if the user selected 'blank'
+    if (wtd == 'blank') {
+        alert("Please Select the Topic 'What to do If'");
+    } else {
+        // Construct the URL
+        var newUrl = "/" + role + "_" + wtd;
+        
+        // Redirect to the new URL
+        window.location.href = newUrl;
+    }
+}
+  </script>
+
+</body>
+
+</html>

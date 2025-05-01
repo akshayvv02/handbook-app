@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Handbook</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+   
+  <!-- Main CSS File -->
+  <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+  <header id="header" class="header d-flex flex-column" style="background-color: #f0f0f0">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Official_USF_Bulls_Athletic_Logo.png" alt="">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Handbook</h1>
+    </a>
+    
+    <div class="social-links text-center">
+      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="instagram"><i class="bi bi-envelope"></i></a>
+      <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active" style="color: black;font-size: 15px;"><b><i class="bi bi-patch-question-fill"></i>&nbsp;&nbsp;&nbsp;What to do if</b></a></li>
+        <select id="wtd" style="font-size: 16px; color: #333; background-color: white; border: 1px solid #ccc; border-radius: 4px; padding: 8px 12px; width: 230px; cursor: pointer; transition: border-color 0.3s ease;">
+            <option value="blank" style="color: #888;">Select option</option>
+            <option value="phishing">Phishing Attack</option>
+            <option value="ransomware">Ransomware Attack</option>
+            <option value="apts">Advanced Persistent Threats</option>
+            <option value="sql-injection">SQL Injection</option>
+            <option value="malware">Malware Infections</option>
+            <option value="social-engineering">Social Engineering</option>
+            <option value="data-breach">Data Breaches</option>
+        </select>
+        <br>
+        <li><a href="#hero" class="active" style="color: black;font-size: 15px;"><b><i class="bi bi-person-circle"></i>&nbsp;&nbsp;&nbsp;Your Role</b></a></li>
+        <select id="role" style="font-size: 16px; color: #333; background-color: white; border: 1px solid #ccc; border-radius: 4px; padding: 8px 12px; width: 230px; cursor: pointer; transition: border-color 0.3s ease;">
+            <option value="blank" style="color: #888;">Select a role</option>
+            <option value="executive">Executive</option>
+            <option value="manager">Manager</option>
+            <option value="employee">Employee</option>
+        </select>
+        <br>
+        <button onclick="redirectToPage()" style="color: white; background-color: #006747; padding: 5px 10px; border: 1px solid #005432; border-radius: 5px; margin-top: 10px;">Search</button>
+      </ul>
+    </nav>
+
+    <div style="position: absolute; bottom: 0; padding-bottom: 20px;">
+      <h5><b>Topical Search</b></h5>
+         <ul style="list-style-type: none;padding: 5px;">
+      <li><a onclick="topicalSearch('emailauth')" href="#" id="mfa"><i class="bi bi-envelope-arrow-up"></i>&nbsp;&nbsp;Email Authentication</a></li>
+      <li><a onclick="topicalSearch('cloudsec')" href="#" id="mfa"><i class="bi bi-cloud-arrow-down-fill"></i>&nbsp;&nbsp;Cloud Security Best Practices</a></li>
+      <li><a onclick="topicalSearch('networksec')" href="#" id="mfa"><i class="bi bi-reception-4"></i>&nbsp;&nbsp;Network Security Protocols</a></li>
+      <li><a onclick="topicalSearch('mobiledevicesecurity')" href="#" id="mds"><i class="bi bi-phone"></i>&nbsp;&nbsp;Mobile Device Security</a></li>
+      <li><a onclick="topicalSearch('securebrowsing')" href="#" id="sbp"><i class="bi bi-browser-chrome"></i>&nbsp;&nbsp;Secure Browsing Practices</a></li>
+      <li><a onclick="topicalSearch('socialengineering')" href="#" id="set"><i class="bi bi-signal"></i>&nbsp;&nbsp;Social Engineering Threats</a></li>
+      <li><a onclick="topicalSearch('mfa')" href="#" id="mfa"><i class="bi bi-fingerprint"></i>&nbsp;&nbsp;Multi-Factor Authentication</a></li>
+      
+    </ul>
+    </div>
+  </header>
+
+  <div style="background-color:#005432; margin: 0; padding: 10px; width: 100%; position: fixed; z-index: 1000;">
+    <h3 style="text-align: center; color:white"><b>Cyber Florida: The Florida Center for Cybersecurity</b></h3>
+  </div>
+
+  <main class="">
+    <section id="hero" class="portfolio section" style="padding: 0;">
+      <div class="container section-title" style="margin: 0; padding: 30px;"></div>
+
+      <div class="container section-title" style="margin: 0; padding: 5px;">
+        <ul class="portfolio-filters isotope-filters">
+          <li onclick="callHome()" data-filter="*" class="filter-active" style="padding: 12px;border-bottom:5px solid #006747;"><b>Home</b></li>
+          <li data-filter=".filter-app" style="padding: 12px;border-bottom:5px solid white;"><b>Settings</b></li>
+          <li onclick="topicalSearch('flstat')" data-filter=".filter-product" style="padding: 12px;border-bottom:5px solid white;"><b>FL Cybersecurity Laws</b></li>
+          <li onclick="location.href='#contact';" data-filter=".filter-branding" style="padding: 12px;border-bottom:5px solid white;"><b>Contact Us</b></li>
+        </ul><!-- End Portfolio Filters -->
+        <hr>
+      </div>
+
+      <br>
+      <div class="container section-title">
+        <h2>EMAIL AUTHENTICATION</h2>
+        <p>Using email authentication technology makes it a lot harder for scammers to send phishing emails. This technology allows a receiving server to verify an email from your company and block emails from an imposter — or send them to a quarantine folder and then notify you about them.</p>
+        <hr>
+        
+        <section id="skills" class="skills section light-background">
+          <div class="container section-title">
+            <h6 style="text-align: center;font-weight: bold;"><i>"Email authentication technology makes it a lot harder for a scammer to send phishing emails that look like they’re from your company."</i></h6>
+          </div>
+        </section>
+
+        <br>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8">
+              <h3>WHAT TO KNOW</h3>
+              <p>Some web host providers let you set up your company’s business email using your domain name (which you may think of as your website name). Your domain name might look like this: yourbusiness.com. And your email may look like this: name@yourbusiness.com. Without email authentication, scammers can use that domain name to send emails that look like they’re from your business. If your business email uses your company’s domain name, make sure that your email provider has these three email authentication tools:</p>
+            </div>
+            <div class="col-lg-4">
+              <img src="https://www.salesforce.com/blog/wp-content/uploads/sites/2/2024/01/Domain-Authentication.-The-key-to-your-customers-inbox_010824.jpg?w=889" alt="Email Authentication" class="img-fluid" style="max-width: 100%;">
+            </div>
+          </div>
+        </div>
+
+        <br>
+        <section id="resume" class="resume section">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="resume-item">
+                  <div class="row">
+                    <div class="col-lg-12" style="padding-left: 10px;">
+                      <h4 style="color: black;text-transform: capitalize;font-weight: bold;"><i class="bi bi-shield-lock"></i>&nbsp;&nbsp;Sender Policy Framework (SPF)</h4>
+                      <p>SPF tells other servers which servers are allowed to send emails using your business’s domain name. When you send an email from name@yourbusiness.com, the receiving server can confirm that the sending server is on an approved list. If it is, the receiving server lets the email through. If it can’t find a match, the email can be flagged as suspicious.</p>
+                    </div>
+                  </div>
+                  <br>
+                </div>
+
+                <div class="resume-item">
+                  <div class="row">
+                    <div class="col-lg-12" style="padding-left: 10px;">
+                      <h4 style="color: black;text-transform: capitalize;font-weight: bold;"><i class="bi bi-key"></i>&nbsp;&nbsp;Domain Keys Identified Mail (DKIM)</h4>
+                      <p>DKIM puts a digital signature on outgoing mail so servers can verify that an email from your domain actually was sent from your organization’s servers. This ensures that the email hasn’t been tampered with in transit.</p>
+                    </div>
+                  </div>
+                  <br>
+                </div>
+
+                <div class="resume-item">
+                  <div class="row">
+                    <div class="col-lg-12" style="padding-left: 10px;">
+                      <h4 style="color: black;text-transform: capitalize;font-weight: bold;"><i class="bi bi-envelope-check"></i>&nbsp;&nbsp;Domain-based Message Authentication, Reporting & Conformance (DMARC)</h4>
+                      <p>DMARC is the essential third tool for email authentication. SPF and DKIM verify the address the server uses “behind the scenes.” DMARC verifies that this address matches the “from” address you see. It also lets you tell other servers what to do when they get an email that looks like it came from your domain, but the receiving server has reason to be suspicious. You can have other servers reject the email, flag it as spam, or take no action. You also can set up DMARC so that you’re notified when this happens.</p>
+                    </div>
+                  </div>
+                  <br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <br>
+        <div class="d-flex justify-content-center">
+          <iframe width="400" height="250" src="https://www.youtube.com/embed/yuhOgyz1cXs" title="Email Authentication Explained" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <br>
+        <br>
+
+        <section id="resume" class="resume section">
+          <div class="container section-title">
+            <h3 style="">WHAT TO DO IF YOUR EMAIL IS SPOOFED</h3>
+            <p>Email authentication helps keep your business’s email from being used in phishing schemes because it notifies you if someone spoofs your company’s email. If you get that notification, take these actions:</p>
+          </div>
+          <br>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6">
+                <section id="skills" class="skills section light-background">
+                  <div class="container section-title">
+                    <h6 style="font-weight: bold;"><i class="bi bi-flag"></i>&nbsp;&nbsp;1. Report it:</h6>
+                    <p>Report the scam to local law enforcement, the FBI’s Internet Crime Complaint Center at IC3.gov, and the FTC at FTC.gov/Complaint. You also can forward phishing emails to spam@uce.gov (an address used by the FTC) and to reportphishing@apwg.org (an address used by the Anti-Phishing Working Group, which includes ISPs, security vendors, financial institutions, and law enforcement agencies).</p>
+                  </div>
+                </section>
+              </div>
+              <div class="col-lg-6">
+                <section id="skills" class="skills section light-background">
+                  <div class="container section-title">
+                    <h6 style="font-weight: bold;"><i class="bi bi-megaphone"></i>&nbsp;&nbsp;2. Notify your Customers:</h6>
+                    <p>If you find out scammers are impersonating your business, tell your customers as soon as possible — by mail, email, or social media. If you email your customers, send an email without hyperlinks: you don’t want your notification email to look like a phishing scam. Remind customers not to share any personal information through email or text. And if your customers’ data was stolen, direct them to IdentityTheft.gov to get a recovery plan.</p>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+
+          <section id="services" class="services section light-background" style="margin: 25px 10px 25px 10px;">
+            <div class="container section-title">
+              <h6 style="font-weight: bold;"><i class="bi bi-bell"></i>&nbsp;&nbsp;3. Alert your staff:</h6>
+              <p>Use this experience to update your security practices and train your staff about cyber threats.</p>
+            </div>
+          </section>          
+        </section>
+      </div>
+    </section>
+
+    <br>
+  </main>
+
+  <header id="header" class="header d-flex flex-column" style="right: 0; border-left: 1px solid lightgrey; background-color: #f0f0f0">
+    <div style="position: absolute; top: 0; padding-top: 10px;"> 
+      <h5><b>Subscribe:</b></h5>
+      <p>Subscribe to our Newsletters</p>
+      <input style="font-size: 16px; color: #333; background-color: white; border: 1px solid #ccc; border-radius: 4px; padding: 8px 12px; width: 230px;" type="text" placeholder="Your Email ID here..">
+      <button onclick="signupClick()" style="color: white; background-color: #006747; padding: 5px 10px; border: 1px solid #005432; border-radius: 5px; margin-top: 10px;">Sign Up</button>
+      <p style="color: #006747; display: none;" id="signup"><b>Awesome! You are signed up to receive our Monthly Newsletters.</b></p>
+      <hr>
+      
+      <h5><b>Our Courses:</b></h5>
+      <ul style="list-style-type: none; padding: 5px;">
+        <li><a href="https://learn.usf-cyber-awareness.org/#/signup" id="mds" target="_blank"><i class="bi bi-bookmark"></i>&nbsp;&nbsp;Awareness Course</a></li>
+        <li><a href="#" id="sbp" target="_blank"><i class="bi bi-bookmark"></i>&nbsp;&nbsp;Executive Course</a></li>
+        <li><a href="#" id="sbp" target="_blank"><i class="bi bi-bookmark"></i>&nbsp;&nbsp;Managerial Course</a></li>
+      </ul>
+    </div>
+
+    <div style="position: absolute; bottom: 0; padding-bottom: 20px;"> 
+      <h5><b>News Headlines:</b></h5>
+      
+      <div style="display: flex; width: 250px; background-color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 10px; border-radius: 10px; overflow: hidden;">
+        <div style="flex: 0 0 30%; overflow: hidden;">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjsEAueQ83P-n8Tb9-uc6BdnNm1XMf_BNle-Wwl-btR74oHrOPZ7m-WmhcLE3kuBPtsZyBIlNwk6xYyDdu5ZQXuM4PEAB7s9APUiqSqHByjestjSPfM4VtiNp-agkgVCLMmp7nffQTPNS00KtRsAIVtRrWovaKq97IwiwMZ7tj6RqSQ7Smr2O6nrVXJghNq/s728-rw-e365/gps.png" alt="News Image" style="height: 70px; width: 70px; object-fit: cover;">
+        </div>
+        <div style="flex: 1; padding: 8px; display: flex; align-items: center;">
+          <a target="_blank" href="https://thehackernews.com/2024/08/critical-flaws-in-traccar-gps-system.html" style="text-decoration: none; color: black; line-height: 1.2; font-size: 15px;">Critical Flaws in Traccar GPS System..<br><span style="color: #888; font-size: 12px;">The Hacker News</span></a>
+        </div>
+      </div>
+
+      <div style="display: flex; width: 250px; background-color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 10px; border-radius: 10px; overflow: hidden;">
+        <div style="flex: 0 0 30%; overflow: hidden;">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi61Uo-gbrcodFC3GT5VI8PxjHqQJa9w-jP8ENUaHxlPVHhbMxx60jCxLlKzS5vBuMUgFbcCNCMdcoyLGzPgBgtyxDxe4pSB2jv7_-puKT538Ffv5rTaUFZac0lU3Sf0uf8fxhQMVEdEY02SSmv6ehhww4l5ydnUb0UEBlYsGSExZrTPYdDEGwsCPMNXaFW/s728-rw-e365/linux.png" alt="News Image" style="height: 70px; width: 70px; object-fit: cover;">
+        </div>
+        <div style="flex: 1; padding: 8px; display: flex; align-items: center;">
+          <a target="_blank" href="https://thehackernews.com/2024/08/critical-flaws-in-traccar-gps-system.html" style="text-decoration: none; color: black; line-height: 1.2; font-size: 15px;">New Linux Malware 'sedexp' Hides..<br><span style="color: #888; font-size: 12px;">The Hacker News</span></a>
+        </div>
+      </div>
+
+      <div style="display: flex; width: 250px; background-color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 0px; border-radius: 10px; overflow: hidden;">
+        <div style="flex: 0 0 30%; overflow: hidden;">
+          <img target="_blank" src="https://cyberscoop.com/wp-content/uploads/sites/3/2017/05/GettyImages-674756398.jpg" alt="News Image" style="height: 70px; width: 70px; object-fit: cover;">
+        </div>
+        <div style="flex: 1; padding: 8px; display: flex; align-items: center;">
+          <a href="https://thehackernews.com/2024/08/critical-flaws-in-traccar-gps-system.html" style="text-decoration: none; color: black; line-height: 1.2; font-size: 15px;">SonicWall pushes patch for critical..<br><span style="color: #888; font-size: 12px;">CyberScoop</span></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/typed.js/typed.umd.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/purecounter/purecounter_vanilla.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/waypoints/noframework.waypoints.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+
+  <!-- Main JS File -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <script>
+    function signupClick() {
+      document.getElementById('signup').style.display = 'block';
+    }
+
+    function callHome() {
+      window.location.href = "/content";
+    }
+
+    function redirectToPage() {
+    // Get the selected values from the dropdowns
+    var role = document.getElementById("role").value;
+    var wtd = document.getElementById("wtd").value;
+    
+    // Check if the user selected 'blank'
+    if (wtd == 'blank') {
+        alert("Please Select the Topic 'What to do If'");
+    } else {
+        // Construct the URL
+        var newUrl = "/" + role + "_" + wtd;
+        
+        // Redirect to the new URL
+        window.location.href = newUrl;
+    }
+}
+  </script>
+
+</body>
+
+</html>

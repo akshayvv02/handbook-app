@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Handbook</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+   <!-- Vendor CSS Files -->
+   <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+   <link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+   <link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+   <link href="{{ url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+   <link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+   
+   <!-- Main CSS File -->
+   <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+  <header id="header" class="header d-flex flex-column" style="background-color: #f0f0f0">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Official_USF_Bulls_Athletic_Logo.png" alt="">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Handbook</h1>
+    </a>
+    
+    <div class="social-links text-center">
+      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="instagram"><i class="bi bi-envelope"></i></a>
+      <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active" style="color: black;font-size: 15px;"><b><i class="bi bi-patch-question-fill"></i>&nbsp;&nbsp;&nbsp;What to do if</b></a></li>
+        <select id="wtd" style="font-size: 16px; color: #333; background-color: white; border: 1px solid #ccc; border-radius: 4px; padding: 8px 12px; width: 230px; cursor: pointer; transition: border-color 0.3s ease;">
+                <option value="blank" style="color: #888;">Select option</option>
+                <option value="phishing">Phishing Attack</option>
+                <option value="ransomware">Ransomware Attack</option>
+                <option value="apts">Advanced Persistent Threats</option>
+                <option value="sql-injection" selected>SQL Injection</option>
+                <option value="malware">Malware Infections</option>
+                <option value="social-engineering">Social Engineering</option>
+                <option value="data-breach">Data Breaches</option>
+            </select>
+        <br>
+        <li><a href="#hero" class="active" style="color: black;font-size: 15px;"><b><i class="bi bi-person-circle"></i>&nbsp;&nbsp;&nbsp;Your Role</b></a></li>
+        <select id="role" style="font-size: 16px; color: #333; background-color: white; border: 1px solid #ccc; border-radius: 4px; padding: 8px 12px; width: 230px; cursor: pointer; transition: border-color 0.3s ease;">
+                <option value="blank" style="color: #888;">Select a role</option>
+                <option value="executive">Executive</option>
+                <option value="manager">Manager</option>
+                <option value="employee">Employee</option>
+            </select>
+            <br>
+            <button onclick="redirectToPage()" style="color: white; background-color: #006747;padding-right: 10px;padding-left: 10px;padding-top: 5px;padding-bottom: 5px;border: 1px solid #005432;border-radius: 5px;margin-top: 10px;margin-bottom: 10px;">Search</button>
+
+      </ul>
+    </nav>
+    <div style="position: absolute; bottom: 0;padding-bottom: 20px;">
+    <h5><b>Topical Search</b></h5>
+       <ul style="list-style-type: none;padding: 5px;">
+      <li><a onclick="topicalSearch('emailauth')" href="#" id="mfa"><i class="bi bi-envelope-arrow-up"></i>&nbsp;&nbsp;Email Authentication</a></li>
+      <li><a onclick="topicalSearch('cloudsec')" href="#" id="mfa"><i class="bi bi-cloud-arrow-down-fill"></i>&nbsp;&nbsp;Cloud Security Best Practices</a></li>
+      <li><a onclick="topicalSearch('networksec')" href="#" id="mfa"><i class="bi bi-reception-4"></i>&nbsp;&nbsp;Network Security Protocols</a></li>
+      <li><a onclick="topicalSearch('mobiledevicesecurity')" href="#" id="mds"><i class="bi bi-phone"></i>&nbsp;&nbsp;Mobile Device Security</a></li>
+      <li><a onclick="topicalSearch('securebrowsing')" href="#" id="sbp"><i class="bi bi-browser-chrome"></i>&nbsp;&nbsp;Secure Browsing Practices</a></li>
+      <li><a onclick="topicalSearch('socialengineering')" href="#" id="set"><i class="bi bi-signal"></i>&nbsp;&nbsp;Social Engineering Threats</a></li>
+      <li><a onclick="topicalSearch('mfa')" href="#" id="mfa"><i class="bi bi-fingerprint"></i>&nbsp;&nbsp;Multi-Factor Authentication</a></li>
+      
+    </ul>
+    </div>
+  </header>
+
+  <div class="" style="background-color:#005432;margin: 0;padding: 10px;width: 100%;position: fixed;z-index: 1000;">
+    <h3 style="text-align: center;color:white"><b>Cyber Florida: The Florida Center for Cybersecurity</b></h3>
+  </div>
+
+  <main class="">
+
+    <section id="hero" class="portfolio section" style="padding: 0;">
+      <div class="container section-title" style="margin: 0;padding: 30px;"></div>
+
+      <div class="container section-title" style="margin: 0;padding: 5px;">
+        <ul class="portfolio-filters isotope-filters">
+          <li onclick="callHome()" data-filter="*" class="filter-active" style="padding: 12px;border-bottom:5px solid #006747;"><b>Home</b></li>
+          <li data-filter=".filter-app" style="padding: 12px;border-bottom:5px solid white;"><b>Settings</b></li>
+          <li onclick="topicalSearch('flstat')" data-filter=".filter-product" style="padding: 12px;border-bottom:5px solid white;"><b>FL Cybersecurity Laws</b></li>
+          <li onclick="location.href='#contact';" data-filter=".filter-branding" style="padding: 12px;border-bottom:5px solid white;"><b>Contact Us</b></li>
+        </ul>
+        <hr>
+      </div>
+      <br>
+
+      <div class="container section-title">
+        <h2>SQL Injection</h2>
+        <p>SQL Injection is a type of cyber attack where malicious SQL code is injected into a query to manipulate a database. This can lead to unauthorized access, data breaches, or even the complete compromise of the database. SQL Injection exploits vulnerabilities in an application's software by inserting or "injecting" malicious code into SQL statements, typically through input fields like login forms.</p>
+        <br><hr>
+      </div>
+      
+      <section id="skills" class="skills section light-background">
+        <!-- Section Title -->
+        <div class="container section-title">
+          <h6 style="text-align: center;font-weight: bold;"><i>"Your input fields are more than just forms—they could be gateways for attackers."</i></h6>
+        </div><!-- End Section Title -->
+      </section><!-- /Skills Section -->
+      <br>
+      
+      <h3>How SQL Injection Works</h3>
+      <p>SQL Injection attacks exploit vulnerabilities in the application’s input validation processes. By injecting malicious SQL code into an input field, an attacker can manipulate the query being executed on the database. For instance, if a login form doesn't properly sanitize user inputs, an attacker could enter a SQL statement that forces the system to bypass authentication, granting them unauthorized access.</p>
+      <br>
+      
+      <section id="resume" class="resume section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="resume-item">
+                <div class="row">
+                  <div class="col-lg-12" style="padding-left: 10px;">
+                    <h4 style="color: black;text-transform: capitalize;font-weight: bold;">Types of SQL Injection</h4>
+                    <p>There are several types of SQL injection attacks, including In-band SQLi (using the same communication channel to both launch the attack and retrieve the data), Inferential SQLi (where attackers gather information by sending payloads that make the database behave differently), and Out-of-band SQLi (which relies on an external source for retrieving data).</p>
+                  </div>
+                </div>
+                <br>
+              </div><!-- End Resume Item -->
+      
+              <div class="resume-item">
+                <div class="row">
+                  <div class="col-lg-12" style="padding-left: 10px;">
+                    <h4 style="color: black;text-transform: capitalize;font-weight: bold;">Potential Impact</h4>
+                    <p>SQL Injection can have severe consequences, including unauthorized access to sensitive data, modification or deletion of data, and in some cases, full control over the compromised server. The financial and reputational damage can be significant, particularly for organizations that manage large amounts of confidential information.</p>
+                  </div>
+                </div>
+                <br>
+              </div><!-- End Resume Item -->
+      
+              <div class="resume-item">
+                <div class="row">
+                  <div class="col-lg-12" style="padding-left: 10px;">
+                    <h4 style="color: black;text-transform: capitalize;font-weight: bold;">Preventive Measures</h4>
+                    <p>Preventing SQL injection requires a combination of secure coding practices, regular security assessments, and robust database management. Using prepared statements and parameterized queries, input validation, and least privilege access to the database can significantly reduce the risk of SQL injection attacks.</p>
+                  </div>
+                </div>
+                <br>
+              </div><!-- End Resume Item -->
+            </div>
+          </div>
+        </div>
+      </section><!-- /Resume Section -->
+      
+      <br>
+      <section id="skills" class="skills section light-background">
+        <div class="container section-title">
+          <h4 style="font-weight: bold;">What You Can Do</h4>
+          <p>To protect your applications and databases from SQL injection attacks, follow these best practices:</p>
+          <br>
+          <ul>
+            <li><strong>Use Prepared Statements:</strong> Always use prepared statements with parameterized queries to ensure that user inputs are not directly executed as SQL commands.</li>
+            <li><strong>Sanitize Inputs:</strong> Validate and sanitize all user inputs to prevent unauthorized SQL commands from being executed.</li>
+            <li><strong>Use ORM Libraries:</strong> Consider using Object-Relational Mapping (ORM) libraries that automatically sanitize SQL queries and prevent SQL injection vulnerabilities.</li>
+            <li><strong>Restrict Database Privileges:</strong> Limit database permissions to the least amount necessary for the application to function, reducing the impact of a potential SQL injection attack.</li>
+          </ul>
+        </div>
+      </section>
+      
+      <br>
+      <section id="skills" class="skills section light-background">
+        <div class="container section-title">
+          <h4 style="font-weight: bold;">How to Protect Your Business</h4>
+          <p>Implement these strategies to safeguard your business from SQL injection attacks:</p>
+          <br>
+          <ul>
+            <li><strong>Regular Security Audits:</strong> Conduct frequent security audits and penetration tests to identify and fix vulnerabilities before they can be exploited.</li>
+            <li><strong>Educate Developers:</strong> Train your development team on secure coding practices to avoid introducing SQL injection vulnerabilities during the development process.</li>
+            <li><strong>Use Web Application Firewalls:</strong> Deploy web application firewalls (WAFs) that can detect and block SQL injection attempts in real-time.</li>
+            <li><strong>Monitor Database Activity:</strong> Implement monitoring tools to track database activities and detect any unusual behavior that could indicate a SQL injection attack.</li>
+          </ul>
+        </div>
+      </section>
+      
+      <section id="resume" class="resume section">
+        <div class="container section-title">
+          <h3 style="">What if You Fall for an SQL Injection Attack</h3>
+          <p>If your application falls victim to an SQL injection attack, follow these steps:</p>
+        </div><!-- End Section Title -->
+        <br>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <section id="skills" class="skills section light-background">
+                <div class="container section-title">
+                  <h6 style="font-weight: bold;">1. Isolate the Affected Systems:</h6>
+                  <p>Immediately isolate the affected systems to prevent the attack from spreading or causing further damage.</p>
+                </div>
+              </section>
+            </div>
+            <div class="col-lg-6">
+              <section id="skills" class="skills section light-background">
+                <div class="container section-title">
+                  <h6 style="font-weight: bold;">2. Conduct a Thorough Investigation:</h6>
+                  <p>Work with cybersecurity experts to identify the source of the SQL injection and assess the extent of the damage.</p>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <section id="skills" class="skills section light-background">
+                <div class="container section-title">
+                  <h6 style="font-weight: bold;">3. Restore from Backups:</h6>
+                  <p>If the database has been compromised, restore it from the most recent backup that is free from the SQL injection attack.</p>
+                </div>
+              </section>
+            </div>
+            <div class="col-lg-6">
+              <section id="skills" class="skills section light-background">
+                <div class="container section-title">
+                  <h6 style="font-weight: bold;">4. Implement Improved Security Measures:</h6>
+                  <p>Review and strengthen your security measures to prevent future SQL injection attacks, including enhancing input validation and restricting database access.</p>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section><!-- /Resume Section -->
+      
+      <section id="services" class="services section light-background" style="margin: 25px 10px 25px 10px;">
+        <div class="container section-title">
+          <h6 style="font-weight: bold;">Follow Up Actions:</h6>
+        </div><!-- End Section Title -->
+        <br>
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-4 col-md-6 service-item d-flex">
+              <div class="icon flex-shrink-0"><i class="bi bi-flag"></i></div>
+              <div>
+                <p class="description">Report the Incident Immediately</p>
+              </div>
+            </div><!-- End Service Item -->
+            <div class="col-lg-4 col-md-6 service-item d-flex">
+              <div class="icon flex-shrink-0"><i class="bi bi-shield-exclamation"></i></div>
+              <div>
+                <p class="description">Conduct a Comprehensive Investigation</p>
+              </div>
+            </div><!-- End Service Item -->
+            <div class="col-lg-4 col-md-6 service-item d-flex">
+              <div class="icon flex-shrink-0"><i class="bi bi-shield-check"></i></div>
+              <div>
+                <p class="description">Reinforce Security Protocols</p>
+              </div>
+            </div><!-- End Service Item -->
+          </div>
+        </div>
+      </section><!-- /Services Section -->
+      
+      <br>
+      <p style="color:red;">* To learn more about protecting yourself from SQL injection based on your specific role, please select your role from the left pane.</p>
+         
+  </main>
+
+  <header id="header" class="header d-flex flex-column" style="right: 0;border-left: 1px solid lightgrey; background-color: #f0f0f0">
+    <div style="position: absolute; top: 0;padding-top: 10px;">
+      <h5><b>Subscribe:</b></h5>
+      <p>Subscribe to our News Letters</p>
+      <input style="font-size: 16px; color: #333; background-color: white; border: 1px solid #ccc; border-radius: 4px; padding: 8px 12px; width: 230px;" type="text" placeholder="Your Email ID here.." />
+      <button onclick="signupClick()" style="color: white; background-color: #006747;padding-right: 10px;padding-left: 10px;padding-top: 5px;padding-bottom: 5px;border: 1px solid #005432;border-radius: 5px;margin-top: 10px;margin-bottom: 10px;">Sign Up</button>
+      <p style="color: #006747;display: none;" id="signup"><b>Awesome! You are signed up to receive our Monthly Newsletters.</b></p>
+      <hr>
+      
+      <h5><b>Our Courses:</b></h5>
+      <ul style="list-style-type: none;padding: 5px;">
+        <li><a href="https://learn.usf-cyber-awareness.org/#/signup" id="mds" target="_blank"><i class="bi bi-bookmark"></i>&nbsp;&nbsp;Awareness Course</a></li>
+        <li><a href="#" id="sbp" target="_blank"><i class="bi bi-bookmark"></i>&nbsp;&nbsp;Executive Course</a></li>
+        <li><a href="#" id="sbp" target="_blank"><i class="bi bi-bookmark"></i>&nbsp;&nbsp;Managerial Course</a></li>
+      </ul>
+    </div>
+
+    <div style="position: absolute; bottom: 0;padding-bottom: 20px;">
+      <h5><b>News Headlines:</b></h5>
+      
+      <div style="display: flex; width: 250px; background-color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 10px; border-radius: 10px; overflow: hidden;">
+        <div style="flex: 0 0 30%; overflow: hidden;">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjsEAueQ83P-n8Tb9-uc6BdnNm1XMf_BNle-Wwl-btR74oHrOPZ7m-WmhcLE3kuBPtsZyBIlNwk6xYyDdu5ZQXuM4PEAB7s9APUiqSqHByjestjSPfM4VtiNp-agkgVCLMmp7nffQTPNS00KtRsAIVtRrWovaKq97IwiwMZ7tj6RqSQ7Smr2O6nrVXJghNq/s728-rw-e365/gps.png" alt="News Image" style="height: 70px; width: 70px; object-fit: cover;">
+        </div>
+        <div style="flex: 1; padding: 8px; display: flex; align-items: center;">
+            <a target="_blank" href="https://thehackernews.com/2024/08/critical-flaws-in-traccar-gps-system.html" style="text-decoration: none; color: black; line-height: 1.2;font-size: 15px;">Critical Flaws in Traccar GPS System..<br><span style="color: #888;font-size: 12px;">The Hacker News</span></a>
+        </div>
+      </div>
+      
+      <div style="display: flex; width: 250px; background-color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 10px; border-radius: 10px; overflow: hidden;">
+        <div style="flex: 0 0 30%; overflow: hidden;">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi61Uo-gbrcodFC3GT5VI8PxjHqQJa9w-jP8ENUaHxlPVHhbMxx60jCxLlKzS5vBuMUgFbcCNCMdcoyLGzPgBgtyxDxe4pSB2jv7_-puKT538Ffv5rTaUFZac0lU3Sf0uf8fxhQMVEdEY02SSmv6ehhww4l5ydnUb0UEBlYsGSExZrTPYdDEGwsCPMNXaFW/s728-rw-e365/linux.png" alt="News Image" style="height: 70px; width: 70px; object-fit: cover;">
+        </div>
+        <div style="flex: 1; padding: 8px; display: flex; align-items: center;">
+          <a target="_blank" href="https://thehackernews.com/2024/08/critical-flaws-in-traccar-gps-system.html" style="text-decoration: none; color: black; line-height: 1.2;font-size: 15px;">New Linux Malware 'sedexp' Hides..<br><span style="color: #888;font-size: 12px;">The Hacker News</span></a>
+        </div>
+      </div>
+
+      <div style="display: flex; width: 250px; background-color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 0px; border-radius: 10px; overflow: hidden;">
+        <div style="flex: 0 0 30%; overflow: hidden;">
+          <img target="_blank" src="https://cyberscoop.com/wp-content/uploads/sites/3/2017/05/GettyImages-674756398.jpg" alt="News Image" style="height: 70px; width: 70px; object-fit: cover;">
+        </div>
+        <div style="flex: 1; padding: 8px; display: flex; align-items: center;">
+          <a href="https://thehackernews.com/2024/08/critical-flaws-in-traccar-gps-system.html" style="text-decoration: none; color: black; line-height: 1.2;font-size: 15px;">SonicWall pushes patch for critical..<br><span style="color: #888;font-size: 12px;">CyberScoop</span></a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/php-email-form/validate.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/typed.js/typed.umd.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/purecounter/purecounter_vanilla.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/waypoints/noframework.waypoints.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+
+<!-- Main JS File -->
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <script>
+    function signupClick(){
+      document.getElementById('signup').style.display = 'block';
+    }
+
+    function callHome(){
+      window.location.href = "/content";
+    }
+
+    function redirectToPage() {
+    // Get the selected values from the dropdowns
+    var role = document.getElementById("role").value;
+    var wtd = document.getElementById("wtd").value;
+    
+    // Check if the user selected 'blank'
+    if (wtd == 'blank') {
+        alert("Please Select the Topic 'What to do If'");
+    } else {
+        // Construct the URL
+        var newUrl = "/" + role + "_" + wtd;
+        
+        // Redirect to the new URL
+        window.location.href = newUrl;
+    }
+}
+  </script>
+
+</body>
+
+</html>

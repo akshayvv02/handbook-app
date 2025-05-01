@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Handbook</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  
+ 
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="vendor/aos/aos.css" rel="stylesheet">
+<link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+<link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+<!-- Main CSS File -->
+<link href="css/main.css" rel="stylesheet">
+
+
+</head>
+
+<body class="index-page">
+  <header id="header" class="header d-flex flex-column" style="background-color: #f0f0f0">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Official_USF_Bulls_Athletic_Logo.png" alt="">
+    </div>
+
+    <a href="#header" class="logo d-flex align-items-center justify-content-center">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <h1 class="sitename">Handbook</h1>
+      
+    </a>
+   
+    
+    <div class="social-links text-center">
+      
+      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="instagram"><i class="bi bi-envelope"></i></a>
+      <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active" style="color: black;font-size: 15px;"><b><i class="bi bi-patch-question-fill"></i>&nbsp;&nbsp;&nbsp;What to do if</b></a></li>
+        <select id="wtd" style="
+        
+            font-size: 16px; /* Font size */
+            color: #333; /* Text color */
+            background-color: white; /* Background color */
+            border: 1px solid #ccc; /* Border style */
+            border-radius: 4px; /* Rounded corners */
+            padding: 8px 12px; /* Padding inside the select box */
+            width: 230px; /* Width of the select box */
+            cursor: pointer; /* Cursor style when hovering */
+            transition: border-color 0.3s ease; /* Smooth border color transition */
+        ">
+                <option value="blank" style="color: #888;">Select option</option>
+                <option value="phishing">Phishing Attack</option>
+                <option value="ransomware">Ransomware Attack</option>
+                <option value="apts">Advanced Persistent Threats</option>
+                <!-- <option value="dos">DoS/DDoS Attack</option> -->
+                <!-- <option value="insider">Insider Threat</option> -->
+                <option value="sql-injection">SQL Injection</option>
+                <option value="malware">Malware Infections</option>
+                <option value="social-engineering">Social Engineering</option>
+                <!-- <option value="zero-day">Zero-Day Exploits</option> -->
+                <option value="data-breach">Data Breaches</option>
+            </select>
+        <br>
+        <li><a href="#hero" class="active" style="color: black;font-size: 15px;"><b><i class="bi bi-person-circle"></i>&nbsp;&nbsp;&nbsp;Your Role</b></a></li>
+        
+        <select id="role" style="
+        
+            font-size: 16px; /* Font size */
+            color: #333; /* Text color */
+            background-color: white; /* Background color */
+            border: 1px solid #ccc; /* Border style */
+            border-radius: 4px; /* Rounded corners */
+            padding: 8px 12px; /* Padding inside the select box */
+            width: 230px; /* Width of the select box */
+            cursor: pointer; /* Cursor style when hovering */
+            transition: border-color 0.3s ease; /* Smooth border color transition */
+        ">
+                <option value="blank" style="color: #888;">Select a role</option>
+                <option value="executive">Executive</option>
+                <option value="manager">Manager</option>
+                <option value="employee">Employee</option>
+            </select>
+            <br>
+            <button onclick="redirectToPage()" style="color: white; background-color: #006747;padding-right: 10px;padding-left: 10px;padding-top: 5px;padding-bottom: 5px;border: 1px solid #005432;border-radius: 5px;margin-top: 10px;margin-bottom: 10px;">Search</button>
+
+      </ul>
+    </nav>
+    <div style="position: absolute; bottom: 0;padding-bottom: 20px;">
+    <h5><b>Topical Search</b></h5>
+    <ul style="list-style-type: none;padding: 5px;">
+      <li><a onclick="topicalSearch('emailauth')" href="#" id="mfa"><i class="bi bi-envelope-arrow-up"></i>&nbsp;&nbsp;Email Authentication</a></li>
+      <li><a onclick="topicalSearch('cloudsec')" href="#" id="mfa"><i class="bi bi-cloud-arrow-down-fill"></i>&nbsp;&nbsp;Cloud Security Best Practices</a></li>
+      <li><a onclick="topicalSearch('networksec')" href="#" id="mfa"><i class="bi bi-reception-4"></i>&nbsp;&nbsp;Network Security Protocols</a></li>
+      <li><a onclick="topicalSearch('mobiledevicesecurity')" href="#" id="mds"><i class="bi bi-phone"></i>&nbsp;&nbsp;Mobile Device Security</a></li>
+      <li><a onclick="topicalSearch('securebrowsing')" href="#" id="sbp"><i class="bi bi-browser-chrome"></i>&nbsp;&nbsp;Secure Browsing Practices</a></li>
+      <li><a onclick="topicalSearch('socialengineering')" href="#" id="set"><i class="bi bi-signal"></i>&nbsp;&nbsp;Social Engineering Threats</a></li>
+      <li><a onclick="topicalSearch('mfa')" href="#" id="mfa"><i class="bi bi-fingerprint"></i>&nbsp;&nbsp;Multi-Factor Authentication</a></li>
+      
+    </ul>
+    </div>
+  </header>
+  <div class="" style="background-color:#005432;margin: 0;padding: 10px;width: 100%;position: fixed;z-index: 1000; ">
+    <h3 style="text-align: center;color:white"><b>Cyber Florida: The Florida Center for Cybersecurity</b></h3><!-- End Portfolio Filters -->
+  </div>
+
+  <main class="">
+
+    <section id="hero" class="portfolio section" style="padding: 0;">
+
+      <div class="container section-title" style="margin: 0;padding: 30px;">
+        
+      </div>
+      <!-- Section Title -->
+      <div class="container section-title" style="margin: 0;padding: 5px;">
+        <ul class="portfolio-filters isotope-filters">
+          <li onclick="callHome()" data-filter="*" class="filter-active" style="padding: 12px;border-bottom:5px solid #006747;"><b>Home</b></li>
+          <li data-filter=".filter-app" style="padding: 12px;border-bottom:5px solid white;"><b>Settings</b></li>
+          <li onclick="topicalSearch('flstat')" data-filter=".filter-product" style="padding: 12px;border-bottom:5px solid white;"><b>FL Cybersecurity Laws</b></li>
+          <li onclick="location.href='#contact';" data-filter=".filter-branding" style="padding: 12px;border-bottom:5px solid white;"><b>Contact Us</b></li>
+        
+        </ul><!-- End Portfolio Filters -->
+        <hr>
+      </div>
+      <br>
+        <div class="container section-title">
+        <h2>Welcome to the Cybersecurity Handbook</h2>
+        <p>This guide aims to provide a clear and accessible introduction to cybersecurity concepts and terminology, raising awareness about common cyber threats and how to recognize them. It emphasizes the importance of every employee's role and responsibility in maintaining cybersecurity, offering practical guidance for preventing, detecting, and reporting cyber incidents. Additionally, it serves as a quick reference guide during a suspected cyber-attack, ensuring that employees are well-equipped to respond effectively.</p>
+        <!--<img src="https://media0.giphy.com/media/U7lhygEmdhGO8yE75x/200.gif" alt="Mobile Security" width="" height="" style="display: block; margin: 0 auto;" />
+        --><br><hr>
+                <section id="skills" class="skills section light-background">
+
+                  <!-- Section Title -->
+                  <div class="container section-title">
+                    <h6 style="text-align: center;font-weight: bold;"><i>"Practicing cybersecurity basics helps protect your business and reduce cyber attack risks"</i></h6>
+                    
+                  </div><!-- End Section Title -->
+                </section><!-- /Skills Section -->
+                <br>
+                    <h3>What is Cybersecurity?</h3>
+<p>Cybersecurity involves protecting systems, networks, and programs from digital attacks aimed at accessing, altering, or destroying sensitive data, extorting money, or disrupting operations. Effective measures reduce risks and prevent unauthorized exploitation. The Local Government Cybersecurity Act (F.S. 282.3185) mandates that local governments adhere to minimum standards and best practices, including those from the NIST Cybersecurity Framework.</p>
+<br>
+
+<section id="services" class="services section">
+
+  <!-- Section Title -->
+  <div class="container section-title" style="padding: 0px;">
+    <h3>Importance of Cybersecurity</h3>
+    <p>Cybersecurity is crucial in safeguarding sensitive information, ensuring business continuity, and protecting against financial and reputational damage. As digital threats continue to evolve, maintaining robust cybersecurity measures is essential to secure our digital lives.</p>
+  </div><!-- End Section Title -->
+<br>
+  <div class="container">
+
+    <div class="row gy-4">
+
+      <div class="col-lg-4 col-md-6 service-item d-flex">
+        <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
+        <div>
+          <h4 class="title">Protects Sensitive Data</h4>
+          <p class="description">Cybersecurity prevents unauthorized access to personal and financial information.</p>
+        </div>
+      </div>
+      <!-- End Service Item -->
+
+      <div class="col-lg-4 col-md-6 service-item d-flex">
+        <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
+        <div>
+          <h4 class="title">Ensures Business Continuity</h4>
+          <p class="description">Effective cybersecurity measures minimize disruptions caused by cyber-attacks.</p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-4 col-md-6 service-item d-flex">
+        <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
+        <div>
+          <h4 class="title">Prevents Financial Loss</h4>
+          <p class="description">Cybersecurity helps avoid the costly consequences of data breaches and fraud.</p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-4 col-md-6 service-item d-flex">
+        <div class="icon flex-shrink-0"><i class="bi bi-binoculars"></i></div>
+        <div>
+          <h4 class="title">Preserves Reputation everywhere</h4>
+          <p class="description">Protecting against cyber threats maintains the trust of customers and stakeholders.</p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-4 col-md-6 service-item d-flex">
+        <div class="icon flex-shrink-0"><i class="bi bi-brightness-high"></i></div>
+        <div>
+          <h4 class="title">Regulatory Compliance</h4>
+          <p class="description">Strong cybersecurity practices ensure compliance with legal and industry standards.</p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-4 col-md-6 service-item d-flex">
+        <div class="icon flex-shrink-0"><i class="bi bi-calendar4-week"></i></div>
+        <div>
+          <h4 class="title">Safeguards from threats</h4>
+          <p class="description">Continuous cybersecurity efforts defend against evolving cyber threats.</p>
+        </div>
+      </div><!-- End Service Item -->
+
+    </div>
+
+  </div>
+
+</section><!-- /Services Section -->
+
+<br>
+<section id="skills" class="skills section light-background">
+  <div class="container section-title">
+<h6 style="font-weight: bold;">"Did You Know? 95% of cybersecurity breaches are caused by human error. Stay informed, stay secure."
+</h6>
+<p>Human error is the weakest link in cybersecurity, making awareness and education essential. Simple actions like using strong passwords, being cautious of suspicious emails, and following security protocols can significantly reduce the risk of breaches. Remember, your vigilance is key to protecting sensitive information and maintaining a secure environment.</p>
+</div>
+
+</section>
+<br>
+<section id="resume" class="resume section">
+
+  <!-- Section Title -->
+  <div class="container section-title">
+    <h3>Your Role in Cybersecurity</h3>
+    <p>Every individual plays a crucial role in maintaining cybersecurity by staying vigilant, following best practices, and promptly reporting any suspicious activity. Your actions directly contribute to protecting sensitive information and ensuring the security of the organization.</p>
+    </div><!-- End Section Title -->
+<br>
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-12">
+        
+        
+        <div class="resume-item">
+          <div class="row">
+            <div class="col-lg-1">
+              <h1 style="font-size: 3em;;"><i class="bi bi-key"></i></h1>
+            </div>
+            <div class="col-lg-11" style="padding-left: 0px;">
+              <h4 style="color: black;text-transform: capitalize;">Control access</h4>
+            <p>Put controls on databases with sensitive information. Limit access to a need-to-know
+              basis, and only for the amount of time a vendor needs to do a job.</p>
+            </div>
+            </div>
+            <br>
+        </div><!-- Edn Resume Item -->
+        <div class="resume-item">
+          <div class="row">
+            <div class="col-lg-1">
+              <h1 style="font-size: 3em;;"><i class="bi bi-fingerprint"></i></h1>
+            </div>
+            <div class="col-lg-11" style="padding-left: 0px;">
+              <h4 style="color: black;text-transform: capitalize;">Use multi-factor authentication</h4>
+            <p>This makes vendors take additional steps beyond logging in with a password to
+              access your network — like a temporary code on a smartphone or a key that’s
+              inserted into a computer. </p>
+            </div>
+            </div>
+            <br>
+        </div><!-- Edn Resume Item -->
+        <div class="resume-item">
+          <div class="row">
+            <div class="col-lg-1">
+              <h1 style="font-size: 3em;;"><i class="bi bi-router-fill"></i></h1>
+            </div>
+            <div class="col-lg-11" style="padding-left: 0px;">
+              <h4 style="color: black;text-transform: capitalize;">Secure your network</h4>
+            <p>Require strong passwords: at least 12 characters with a mix of numbers, symbols, and
+              both capital and lowercase letters. Never reuse passwords, don’t share them, and
+              limit the number of unsuccessful log-in attempts to limit password-guessing attacks.</p>
+            </div>
+            </div>
+            <br>
+        </div><!-- Edn Resume Item -->
+        <div class="resume-item">
+          <div class="row">
+            <div class="col-lg-1">
+              <h1 style="font-size: 3em;;"><i class="bi bi-file-earmark-break-fill"></i></h1>
+            </div>
+            <div class="col-lg-11" style="padding-left: 0px;">
+              <h4 style="color: black;text-transform: capitalize;">Safeguard your data</h4>
+            <p>Use properly configured, strong encryption. This protects sensitive information as
+              it’s transferred and stored.</p>
+            </div>
+            </div>
+            <br>
+        </div><!-- Edn Resume Item -->
+      </div> 
+    </div>
+
+  </div>
+
+</section><!-- /Resume Section -->
+
+<section id="resume" class="resume section">
+
+  <!-- Section Title -->
+  <div class="container section-title">
+    <h3 style="">Understanding
+      the NIST Cybersecurity
+      Framework</h3>
+    <p>NIST is the National Institute of Standards and
+      Technology at the U.S. Department of Commerce.
+      The NIST Cybersecurity Framework helps
+      businesses of all sizes better understand,
+      manage, and reduce their cybersecurity risk
+      and protect their networks and data. The
+      Framework is voluntary. It gives your business
+      an outline of best practices to help you decide
+      where to focus your time and money for
+      cybersecurity protection.
+      You can put the NIST Cybersecurity Framework
+      to work in your business in these five areas:
+      Identify, Protect, Detect, Respond, and Recover.</p>
+    </div><!-- End Section Title -->
+<br>
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-6">
+        
+        <section id="skills" class="skills section light-background">
+          <div class="container section-title">
+        <h6 style="font-weight: bold;">1. IDENTIFY
+        </h6>
+        <p>Make a list of all equipment, software, and data
+          you use, including laptops, smartphones, tablets,
+          and point-of-sale devices.<br>Create and share a company cybersecurity
+          policy that covers:</p>
+          <ul>
+            <li>Roles and responsibilities
+              for employees, vendors, and
+              anyone else with access to
+              sensitive data.</li>
+              <li>Steps to take to protect against
+                an attack and limit the damage if
+                one occurs.</li>
+          </ul>
+        </div>
+        
+        </section>
+        
+      </div>
+      <div class="col-lg-6">
+        
+        <section id="skills" class="skills section light-background">
+          <div class="container section-title">
+        <h6 style="font-weight: bold;">2. PROTECT
+        </h6>
+        <ul>
+          <li>Control who logs on to your network and uses your computers and other devices.</li>
+          <li>Use security software to protect data.</li>
+          <li>Encrypt sensitive data, at rest and in transit.</li>
+          <li>Conduct regular backups of data.</li>
+          <li>Update security software regularly, automating those updates if possible.</li>
+          <li>Have formal policies for safely disposing of electronic files and old devices.</li>
+      </ul>
+      
+        </div>
+        
+        </section>
+        
+      </div> 
+    </div>
+
+  </div>
+  
+  <section id="services" class="services section light-background" style="margin: 25px 10px 25px 10px;">
+
+    <!-- Section Title -->
+    <div class="container section-title">
+      <h6 style="font-weight: bold;">3. DETECT
+      </h6>
+    </div><!-- End Section Title -->
+  <br>
+    <div class="container">
+  
+      <div class="row gy-4">
+  
+        <div class="col-lg-4 col-md-6 service-item d-flex">
+          <div class="icon flex-shrink-0"><i class="bi bi-display"></i></div>
+          <div>
+            
+            <p class="description">Monitor your computers
+              for unauthorized personnel
+              access, devices (like USB), and software.</p>
+          </div>
+        </div>
+        <!-- End Service Item -->
+  
+        <div class="col-lg-4 col-md-6 service-item d-flex">
+          <div class="icon flex-shrink-0"><i class="bi bi-wifi"></i></div>
+          <div>
+            
+            <p class="description">Check your network
+              for unauthorized
+              users or connections.</p>
+          </div>
+        </div><!-- End Service Item -->
+  
+        <div class="col-lg-4 col-md-6 service-item d-flex">
+          <div class="icon flex-shrink-0"><i class="bi bi-search"></i></div>
+          <div>
+            
+            <p class="description">Investigate any unusual
+              activities on your network
+              or by your staff.</p>
+          </div>
+        </div><!-- End Service Item -->
+  
+        
+  
+      </div>
+  
+    </div>
+  
+  </section><!-- /Services Section -->
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-6">
+        
+        <section id="skills" class="skills section light-background">
+          <div class="container section-title">
+        <h6 style="font-weight: bold;">4. RESPOND
+        </h6>
+        <p>Have a plan for:</p>
+        <ul>
+          <li>Notifying customers, employees, and others whose data may be at risk.</li>
+          <li>Keeping business operations up and running.</li>
+          <li>Reporting the attack to law enforcement and other authorities.</li>
+      </ul>
+      
+        </div>
+        
+        </section>
+        
+      </div>
+      <div class="col-lg-6">
+        
+        <section id="skills" class="skills section light-background">
+          <div class="container section-title">
+        <h6 style="font-weight: bold;">5. RESPOND
+        </h6>
+        <p>After an attack:</p>
+        <ul>
+          <li>Repair and restore the equipment and parts of your network that were affected.</li>
+          <li>Keep employees and customers informed of your response and recovery activities.</li>
+      </ul>
+      
+      
+        </div>
+        
+        </section>
+        
+      </div> 
+    </div>
+
+  </div>
+
+</section><!-- /Resume Section -->
+
+      </div><!-- End Section Title -->
+
+      <br>
+      
+    </section><!-- /Portfolio Section -->
+    <!-- Hero Section -->
+   
+      
+
+  
+    
+
+    <!-- About Section -->
+    
+
+    <!-- Stats Section -->
+    
+
+    
+
+    <!-- Resume Section -->
+    
+
+    <!-- Portfolio Section -->
+    
+
+    <!-- Services Section -->
+    
+
+    <!-- Testimonials Section -->
+    
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title">
+        <h3>Contact us</h3>
+        <br>
+        
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-12">
+
+            <div class="info-wrap">
+              <div class="info-item d-flex">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Address</h3>
+                  <p>Florida, US</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Call Us</h3>
+                  <p>+1 000 000 0000</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email Us</h3>
+                  <p>info@example.com</p>
+                </div>
+              </div><!-- End Info Item -->
+
+            </div>
+          </div>
+
+          
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+  <header id="header" class="header d-flex flex-column" style="right: 0;border-left: 1px solid lightgrey; background-color: #f0f0f0">
+
+    <div style="position: absolute; top: 0;padding-top: 10px;"> 
+      <h5><b>Subscribe:</b></h5>
+      <p>Subscribe to our News Letters</p>
+      <input style="
+        
+      font-size: 16px; /* Font size */
+      color: #333; /* Text color */
+      background-color: white; /* Background color */
+      border: 1px solid #ccc; /* Border style */
+      border-radius: 4px; /* Rounded corners */
+      padding: 8px 12px; /* Padding inside the select box */
+      width: 230px; /* Width of the select box */; "
+      type="text" placeholder="Your Email ID here.." />
+      <button onclick="signupClick()" style="color: white; background-color: #006747;padding-right: 10px;padding-left: 10px;padding-top: 5px;padding-bottom: 5px;border: 1px solid #005432;border-radius: 5px;margin-top: 10px;margin-bottom: 10px;">Sign Up</button>
+      <p style="color: #006747;display: none;" id="signup"><b>Awesome! You are signed up to receive our Monthly Newsletters.</b></p>
+      <hr>
+      
+      <h5><b>Our Courses:</b></h5>
+      <ul style="list-style-type: none;padding: 5px;">
+        <li><a href="https://learn.usf-cyber-awareness.org/#/signup" id="mds" target="_blank"><i class="bi bi-bookmark"></i>&nbsp;&nbsp;Awareness Course</a></li>
+        <li><a href="#" id="sbp" target="_blank"><i class="bi bi-bookmark"></i>&nbsp;&nbsp;Executive Course</a></li>
+        <li><a href="#" id="sbp" target="_blank"><i class="bi bi-bookmark"></i>&nbsp;&nbsp;Managerial Course</a></li>
+        
+        
+      </ul>
+      <p></p>
+    </div>
+
+    <div style="position: absolute; bottom: 0;padding-bottom: 20px;"> 
+      <h5><b>News Headlines:</b></h5>
+      <div id="news">
+      
+</div>
+
+      
+    </div>
+    
+
+  </header>
+
+  
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+ <!-- Vendor JS Files -->
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="vendor/php-email-form/validate.js"></script>
+<script src="vendor/aos/aos.js"></script>
+<script src="vendor/typed.js/typed.umd.js"></script>
+<script src="vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="vendor/waypoints/noframework.waypoints.js"></script>
+<script src="vendor/glightbox/js/glightbox.min.js"></script>
+<script src="vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="vendor/swiper/swiper-bundle.min.js"></script>
+
+<!-- Main JS File -->
+<script src="js/main.js"></script>
+
+
+  <script>
+    function signupClick(){
+      document.getElementById('signup').style.display = 'block';
+    }
+
+    function topicalSearch(topic)
+    {
+        // Construct the URL
+        var newUrl = "/" + topic
+    
+        // Redirect to the new URL
+        window.location.href = newUrl;
+    }
+
+    function redirectToPage() {
+    // Get the selected values from the dropdowns
+    var role = document.getElementById("role").value;
+    var wtd = document.getElementById("wtd").value;
+    
+    // Check if the user selected 'blank'
+    if (wtd == 'blank') {
+        alert("Please Select the Topic 'What to do If'");
+    } else {
+        // Construct the URL
+        var newUrl = "/" + role + "_" + wtd;
+        
+        // Redirect to the new URL
+        window.location.href = newUrl;
+    }
+}
+
+  </script>
+  <script>
+    const url = 'http://api.mediastack.com/v1/news?access_key=186e9ab51e73f859dc7a8155a&keywords=cyber security&countries=us&limit=100';
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const articles = data.data;
+            const articlesWithImages = articles.filter(article => article.image !== null);
+            const randomArticles = getRandomArticles(articlesWithImages, 3);
+
+            let output = '';
+            randomArticles.forEach(article => {
+                const title = article.title.length > 36 ? article.title.substring(0, 36) + '...' : article.title;
+                const imageUrl = article.image ? article.image : 'https://via.placeholder.com/70';
+                const source = article.source;
+
+                output += `
+                    <div style="display: flex; width: 250px; background-color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 10px; border-radius: 10px; overflow: hidden;">
+                        <div style="flex: 0 0 30%; overflow: hidden;">
+                            <img src="${imageUrl}" alt="News Image" style="height: 70px; width: 70px; object-fit: cover;">
+                        </div>
+                        <div style="flex: 1; padding: 8px; display: flex; align-items: center;">
+                            <a target="_blank" href="${article.url}" style="text-decoration: none; color: black; line-height: 1.2; font-size: 15px;">
+                                ${title}<br>
+                                <span style="color: #888; font-size: 12px;">${source}</span>
+                            </a>
+                        </div>
+                    </div>
+                `;
+            });
+
+            document.getElementById('news').innerHTML = output;
+        })
+        .catch(error => {
+            console.error('Error fetching the news:', error);
+        });
+
+    function getRandomArticles(articles, num) {
+        const shuffled = articles.sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, num);
+    }
+</script>
+
+</body>
+
+</html>

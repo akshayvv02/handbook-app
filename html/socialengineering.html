@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Handbook</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+   
+  <!-- Main CSS File -->
+  <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+  <header id="header" class="header d-flex flex-column" style="background-color: #f0f0f0">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Official_USF_Bulls_Athletic_Logo.png" alt="">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Handbook</h1>
+    </a>
+    
+    <div class="social-links text-center">
+      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="instagram"><i class="bi bi-envelope"></i></a>
+      <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active" style="color: black;font-size: 15px;"><b><i class="bi bi-patch-question-fill"></i>&nbsp;&nbsp;&nbsp;What to do if</b></a></li>
+        <select id="wtd" style="font-size: 16px; color: #333; background-color: white; border: 1px solid #ccc; border-radius: 4px; padding: 8px 12px; width: 230px; cursor: pointer; transition: border-color 0.3s ease;">
+            <option value="blank" style="color: #888;">Select option</option>
+            <option value="phishing">Phishing Attack</option>
+            <option value="ransomware">Ransomware Attack</option>
+            <option value="apts">Advanced Persistent Threats</option>
+            <option value="sql-injection">SQL Injection</option>
+            <option value="malware">Malware Infections</option>
+            <option value="social-engineering">Social Engineering</option>
+            <option value="data-breach">Data Breaches</option>
+        </select>
+        <br>
+        <li><a href="#hero" class="active" style="color: black;font-size: 15px;"><b><i class="bi bi-person-circle"></i>&nbsp;&nbsp;&nbsp;Your Role</b></a></li>
+        <select id="role" style="font-size: 16px; color: #333; background-color: white; border: 1px solid #ccc; border-radius: 4px; padding: 8px 12px; width: 230px; cursor: pointer; transition: border-color 0.3s ease;">
+            <option value="blank" style="color: #888;">Select a role</option>
+            <option value="executive">Executive</option>
+            <option value="manager">Manager</option>
+            <option value="employee">Employee</option>
+        </select>
+        <br>
+        <button onclick="redirectToPage()" style="color: white; background-color: #006747; padding: 5px 10px; border: 1px solid #005432; border-radius: 5px; margin-top: 10px;">Search</button>
+      </ul>
+    </nav>
+
+    <div style="position: absolute; bottom: 0; padding-bottom: 20px;">
+      <h5><b>Topical Search</b></h5>
+         <ul style="list-style-type: none;padding: 5px;">
+      <li><a onclick="topicalSearch('emailauth')" href="#" id="mfa"><i class="bi bi-envelope-arrow-up"></i>&nbsp;&nbsp;Email Authentication</a></li>
+      <li><a onclick="topicalSearch('cloudsec')" href="#" id="mfa"><i class="bi bi-cloud-arrow-down-fill"></i>&nbsp;&nbsp;Cloud Security Best Practices</a></li>
+      <li><a onclick="topicalSearch('networksec')" href="#" id="mfa"><i class="bi bi-reception-4"></i>&nbsp;&nbsp;Network Security Protocols</a></li>
+      <li><a onclick="topicalSearch('mobiledevicesecurity')" href="#" id="mds"><i class="bi bi-phone"></i>&nbsp;&nbsp;Mobile Device Security</a></li>
+      <li><a onclick="topicalSearch('securebrowsing')" href="#" id="sbp"><i class="bi bi-browser-chrome"></i>&nbsp;&nbsp;Secure Browsing Practices</a></li>
+      <li><a onclick="topicalSearch('socialengineering')" href="#" id="set"><i class="bi bi-signal"></i>&nbsp;&nbsp;Social Engineering Threats</a></li>
+      <li><a onclick="topicalSearch('mfa')" href="#" id="mfa"><i class="bi bi-fingerprint"></i>&nbsp;&nbsp;Multi-Factor Authentication</a></li>
+      
+    </ul>
+    </div>
+  </header>
+
+  <div style="background-color:#005432; margin: 0; padding: 10px; width: 100%; position: fixed; z-index: 1000;">
+    <h3 style="text-align: center; color:white"><b>Cyber Florida: The Florida Center for Cybersecurity</b></h3>
+  </div>
+
+  <main class="">
+    <section id="hero" class="portfolio section" style="padding: 0;">
+      <div class="container section-title" style="margin: 0; padding: 30px;"></div>
+
+      <div class="container section-title" style="margin: 0; padding: 5px;">
+        <ul class="portfolio-filters isotope-filters">
+          <li onclick="callHome()" data-filter="*" class="filter-active" style="padding: 12px; border-bottom:5px solid #006747;"><b>Home</b></li>
+          <li data-filter=".filter-app" style="padding: 12px; border-bottom:5px solid white;"><b>Settings</b></li>
+          <li onclick="topicalSearch('flstat')" data-filter=".filter-product" style="padding: 12px; border-bottom:5px solid white;"><b>FL Cybersecurity Laws</b></li>
+          <li onclick="location.href='#contact';" data-filter=".filter-branding" style="padding: 12px; border-bottom:5px solid white;"><b>Contact Us</b></li>
+        </ul>
+        <hr>
+      </div>
+
+      <br>
+      <div class="container section-title">
+        <h2>Social Engineering Threats</h2>
+        <p>Social engineering is a sophisticated and insidious form of cyberattack that exploits human psychology rather than technical vulnerabilities. Unlike traditional hacking methods, social engineering relies on tricking individuals into divulging sensitive information or performing actions that compromise security. These attacks are often subtle, making them difficult to detect and prevent. Understanding the various forms of social engineering and how to defend against them is crucial for maintaining both personal and organizational security.</p>
+        <hr>
+      </div>
+      
+      <section id="skills" class="skills section light-background">
+        <div class="container section-title">
+          <h6 style="text-align: center;font-weight: bold;"><i>"Social engineering is not about breaking systems—it's about breaking people."</i></h6>
+        </div>
+      </section>
+      
+      <br>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <h3>COMMON SOCIAL ENGINEERING TACTICS</h3>
+            <p>Social engineering attacks take many forms, each designed to exploit human trust and emotions. From phishing to baiting, understanding these tactics is essential for building a strong defense against them.</p>
+          </div>
+          <div class="col-lg-4">
+            <img src="https://cheapsslsecurity.com/blog/wp-content/uploads/2022/05/social-engineering-attacks-1.jpg" alt="Social Engineering Threats" class="img-fluid" style="max-width: 100%; height: auto;">
+          </div>
+        </div>
+      </div>
+      
+      <br>
+      <section id="resume" class="resume section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="resume-item">
+                <div class="row">
+                  <div class="col-lg-12" style="padding-left: 10px;">
+                    <h4 style="color: black;text-transform: capitalize;font-weight: bold;"><i class="bi bi-envelope-exclamation"></i>&nbsp;&nbsp;Phishing</h4>
+                    <p>Phishing remains one of the most prevalent social engineering tactics. It typically involves sending fraudulent emails that appear to come from legitimate sources, such as banks, social media platforms, or colleagues. These emails often contain urgent messages designed to provoke an emotional response, such as a warning that your account has been compromised or that a payment is overdue. The goal is to trick the recipient into clicking on a malicious link or providing sensitive information, such as login credentials or credit card numbers.</p>
+                  </div>
+                </div>
+                <br>
+              </div>
+      
+              <div class="resume-item">
+                <div class="row">
+                  <div class="col-lg-12" style="padding-left: 10px;">
+                    <h4 style="color: black;text-transform: capitalize;font-weight: bold;"><i class="bi bi-person-check"></i>&nbsp;&nbsp;Spear Phishing</h4>
+                    <p>Spear phishing is a more targeted form of phishing, where the attacker customizes the message to a specific individual or organization. By researching their target, the attacker can create a highly convincing email that appears to be from a trusted source. For example, a spear phishing email might appear to come from a CEO to a finance employee, instructing them to transfer funds to a certain account. Due to its personalized nature, spear phishing is particularly effective and dangerous.</p>
+                  </div>
+                </div>
+                <br>
+              </div>
+      
+              <div class="resume-item">
+                <div class="row">
+                  <div class="col-lg-12" style="padding-left: 10px;">
+                    <h4 style="color: black;text-transform: capitalize;font-weight: bold;"><i class="bi bi-chat-square-text"></i>&nbsp;&nbsp;Pretexting</h4>
+                    <p>Pretexting is another form of social engineering where an attacker fabricates a scenario to gain the victim's trust and obtain information. For example, an attacker might pose as a bank employee and ask for personal details to "verify your identity." The key to pretexting is the creation of a plausible story that convinces the victim to comply with the request. Defending against pretexting involves being cautious about sharing personal information and verifying the identity of anyone requesting sensitive data.</p>
+                  </div>
+                </div>
+                <br>
+              </div>
+      
+              <div class="resume-item">
+                <div class="row">
+                  <div class="col-lg-12" style="padding-left: 10px;">
+                    <h4 style="color: black;text-transform: capitalize;font-weight: bold;"><i class="bi bi-usb"></i>&nbsp;&nbsp;Baiting</h4>
+                    <p>Baiting is another social engineering tactic that exploits curiosity or greed. Attackers might leave infected USB drives labeled "Confidential" in public places, hoping someone will pick them up and plug them into their computer. Once connected, the USB drive installs malware that can steal data or give the attacker remote access to the victim's system. To avoid falling victim to baiting, never use unknown USB drives or other external devices.</p>
+                  </div>
+                </div>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <br>
+      <div class="d-flex justify-content-center">
+        <iframe width="400" height="250" src="https://www.youtube.com/embed/v7VTJhkJUUY" title="Social Engineering Threats" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <br>
+      <br>
+      
+      <section id="resume" class="resume section">
+        <div class="container section-title">
+          <h3 style="">DEFENDING AGAINST SOCIAL ENGINEERING</h3>
+          <p>Awareness and education are key to defending against social engineering. By understanding these tactics and remaining vigilant, individuals and organizations can protect themselves from manipulative attacks.</p>
+        </div>
+        <br>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <section id="skills" class="skills section light-background">
+                <div class="container section-title">
+                  <h6 style="font-weight: bold;"><i class="bi bi-journal-check"></i>&nbsp;&nbsp;1. Regular Employee Training</h6>
+                  <p>Organizations should regularly train employees on the latest social engineering tactics and encourage a culture of skepticism when dealing with unsolicited requests for information or actions. Continuous education helps employees recognize and avoid falling victim to these attacks.</p>
+                </div>
+              </section>
+            </div>
+            <div class="col-lg-6">
+              <section id="skills" class="skills section light-background">
+                <div class="container section-title">
+                  <h6 style="font-weight: bold;"><i class="bi bi-shield-lock"></i>&nbsp;&nbsp;2. Verify Identities</h6>
+                  <p>Always verify the identity of anyone requesting sensitive information or actions, especially if the request is unexpected. This can involve directly contacting the person or organization supposedly making the request to confirm its legitimacy.</p>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      
+        <section id="services" class="services section light-background" style="margin: 25px 10px 25px 10px;">
+          <div class="container section-title">
+            <h6 style="font-weight: bold;"><i class="bi bi-shield-exclamation"></i>&nbsp;&nbsp;3. Implement Security Policies</h6>
+            <p>Establish and enforce security policies that limit the sharing of sensitive information. Ensure that these policies are communicated clearly to all employees, and regularly review and update them to address new threats.</p>
+          </div>
+        </section>
+        
+        <section id="services" class="services section light-background" style="margin: 25px 10px 25px 10px;">
+          <div class="container section-title">
+            <h6 style="font-weight: bold;"><i class="bi bi-person-x"></i>&nbsp;&nbsp;4. Cultivate a Culture of Skepticism</h6>
+            <p>Encourage employees to question unusual requests and to report suspicious activities immediately. Fostering a culture of skepticism can prevent employees from blindly following instructions that may lead to a security breach.</p>
+          </div>
+        </section>
+      </section>
+      
+      
+
+    <br>
+  </main>
+
+  <header id="header" class="header d-flex flex-column" style="right: 0; border-left: 1px solid lightgrey; background-color: #f0f0f0">
+    <div style="position: absolute; top: 0; padding-top: 10px;"> 
+      <h5><b>Subscribe:</b></h5>
+      <p>Subscribe to our Newsletters</p>
+      <input style="font-size: 16px; color: #333; background-color: white; border: 1px solid #ccc; border-radius: 4px; padding: 8px 12px; width: 230px;" type="text" placeholder="Your Email ID here..">
+      <button onclick="signupClick()" style="color: white; background-color: #006747; padding: 5px 10px; border: 1px solid #005432; border-radius: 5px; margin-top: 10px;">Sign Up</button>
+      <p style="color: #006747; display: none;" id="signup"><b>Awesome! You are signed up to receive our Monthly Newsletters.</b></p>
+      <hr>
+      
+      <h5><b>Our Courses:</b></h5>
+      <ul style="list-style-type: none; padding: 5px;">
+        <li><a href="https://learn.usf-cyber-awareness.org/#/signup" id="mds" target="_blank"><i class="bi bi-bookmark"></i>&nbsp;&nbsp;Awareness Course</a></li>
+        <li><a href="#" id="sbp" target="_blank"><i class="bi bi-bookmark"></i>&nbsp;&nbsp;Executive Course</a></li>
+        <li><a href="#" id="sbp" target="_blank"><i class="bi bi-bookmark"></i>&nbsp;&nbsp;Managerial Course</a></li>
+      </ul>
+    </div>
+
+    <div style="position: absolute; bottom: 0; padding-bottom: 20px;"> 
+      <h5><b>News Headlines:</b></h5>
+      
+      <div style="display: flex; width: 250px; background-color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 10px; border-radius: 10px; overflow: hidden;">
+        <div style="flex: 0 0 30%; overflow: hidden;">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjsEAueQ83P-n8Tb9-uc6BdnNm1XMf_BNle-Wwl-btR74oHrOPZ7m-WmhcLE3kuBPtsZyBIlNwk6xYyDdu5ZQXuM4PEAB7s9APUiqSqHByjestjSPfM4VtiNp-agkgVCLMmp7nffQTPNS00KtRsAIVtRrWovaKq97IwiwMZ7tj6RqSQ7Smr2O6nrVXJghNq/s728-rw-e365/gps.png" alt="News Image" style="height: 70px; width: 70px; object-fit: cover;">
+        </div>
+        <div style="flex: 1; padding: 8px; display: flex; align-items: center;">
+          <a target="_blank" href="https://thehackernews.com/2024/08/critical-flaws-in-traccar-gps-system.html" style="text-decoration: none; color: black; line-height: 1.2; font-size: 15px;">Critical Flaws in Traccar GPS System..<br><span style="color: #888; font-size: 12px;">The Hacker News</span></a>
+        </div>
+      </div>
+
+      <div style="display: flex; width: 250px; background-color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 10px; border-radius: 10px; overflow: hidden;">
+        <div style="flex: 0 0 30%; overflow: hidden;">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi61Uo-gbrcodFC3GT5VI8PxjHqQJa9w-jP8ENUaHxlPVHhbMxx60jCxLlKzS5vBuMUgFbcCNCMdcoyLGzPgBgtyxDxe4pSB2jv7_-puKT538Ffv5rTaUFZac0lU3Sf0uf8fxhQMVEdEY02SSmv6ehhww4l5ydnUb0UEBlYsGSExZrTPYdDEGwsCPMNXaFW/s728-rw-e365/linux.png" alt="News Image" style="height: 70px; width: 70px; object-fit: cover;">
+        </div>
+        <div style="flex: 1; padding: 8px; display: flex; align-items: center;">
+          <a target="_blank" href="https://thehackernews.com/2024/08/critical-flaws-in-traccar-gps-system.html" style="text-decoration: none; color: black; line-height: 1.2; font-size: 15px;">New Linux Malware 'sedexp' Hides..<br><span style="color: #888; font-size: 12px;">The Hacker News</span></a>
+        </div>
+      </div>
+
+      <div style="display: flex; width: 250px; background-color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 0px; border-radius: 10px; overflow: hidden;">
+        <div style="flex: 0 0 30%; overflow: hidden;">
+          <img target="_blank" src="https://cyberscoop.com/wp-content/uploads/sites/3/2017/05/GettyImages-674756398.jpg" alt="News Image" style="height: 70px; width: 70px; object-fit: cover;">
+        </div>
+        <div style="flex: 1; padding: 8px; display: flex; align-items: center;">
+          <a href="https://thehackernews.com/2024/08/critical-flaws-in-traccar-gps-system.html" style="text-decoration: none; color: black; line-height: 1.2; font-size: 15px;">SonicWall pushes patch for critical..<br><span style="color: #888; font-size: 12px;">CyberScoop</span></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/typed.js/typed.umd.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/purecounter/purecounter_vanilla.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/waypoints/noframework.waypoints.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+
+  <!-- Main JS File -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <script>
+    function signupClick() {
+      document.getElementById('signup').style.display = 'block';
+    }
+
+    function callHome() {
+      window.location.href = "/content";
+    }
+
+    function redirectToPage() {
+    // Get the selected values from the dropdowns
+    var role = document.getElementById("role").value;
+    var wtd = document.getElementById("wtd").value;
+    
+    // Check if the user selected 'blank'
+    if (wtd == 'blank') {
+        alert("Please Select the Topic 'What to do If'");
+    } else {
+        // Construct the URL
+        var newUrl = "/" + role + "_" + wtd;
+        
+        // Redirect to the new URL
+        window.location.href = newUrl;
+    }
+}
+  </script>
+
+</body>
+
+</html>

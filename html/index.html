@@ -642,7 +642,7 @@
     function topicalSearch(topic)
     {
         // Construct the URL
-        var newUrl = "/" + topic
+        var newUrl =  topic + ".html"
     
         // Redirect to the new URL
         window.location.href = newUrl;
@@ -658,7 +658,7 @@
         alert("Please Select the Topic 'What to do If'");
     } else {
         // Construct the URL
-        var newUrl = "/" + role + "_" + wtd;
+        var newUrl =  role + "_" + wtd + ".html";
         
         // Redirect to the new URL
         window.location.href = newUrl;

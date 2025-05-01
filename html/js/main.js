@@ -10,7 +10,7 @@ document.body.style.zoom = "90%";
 function topicalSearch(topic)
 {
     // Construct the URL
-    var newUrl = "/" + topic
+    var newUrl =   topic + ".html";
 
     // Redirect to the new URL
     window.location.href = newUrl;
